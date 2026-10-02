@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Magic Gravity - Rocha Chueiri - Reino e Escola Mágica Ancestral</title>
+    <title>Magic Gravity - Rocha Chueiri</title>
 
-    <!-- FONTES -->
+    <!-- FONTES MEDIEVAIS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -15,24 +15,33 @@
     <style>
 
         :root {
-            --gold: #f5d77f;
-            --gold-bright: #fff0a8;
-            --gold-dark: #b8860b;
+            --gold: #d6b45c;
+            --gold-bright: #ffe9a0;
+            --gold-dark: #8c6a24;
 
-            --royal-red: #8b0000;
-            --royal-blue: #0d1b3e;
+            --bronze: #9c6b30;
 
-            --purple-glow: #9d4edd;
+            --forest-dark: #07150d;
+            --forest: #0b2416;
+            --forest-light: #123b24;
+            --forest-card: #14291c;
 
-            --parchment: #18120b;
-            --parchment-card: #221a12;
+            --royal-red: #650909;
 
-            --border-gold: #c5a059;
+            --purple-glow: #8d5bb5;
 
-            --text-light: #f4eae1;
-            --text-muted: #b8aa98;
+            --stone: #252821;
+
+            --border-gold: #b8944e;
+
+            --text-light: #eee7d5;
+            --text-muted: #aaa995;
         }
 
+
+        /* ==========================================
+           RESET
+        ========================================== */
 
         * {
             box-sizing: border-box;
@@ -41,34 +50,42 @@
         }
 
 
+        /* ==========================================
+           FUNDO VERDE MEDIEVAL
+        ========================================== */
+
         body {
 
-            background-color: #080503;
+            min-height: 100vh;
+
+            background-color: var(--forest-dark);
 
             background-image:
 
                 radial-gradient(
-                    circle at 50% 10%,
-                    rgba(157, 78, 221, 0.3),
-                    transparent 60%
+                    circle at 50% 0%,
+                    rgba(41, 94, 54, 0.55),
+                    transparent 45%
                 ),
 
                 radial-gradient(
-                    circle at 50% 90%,
-                    rgba(13, 27, 62, 0.35),
-                    transparent 70%
+                    circle at 15% 40%,
+                    rgba(22, 74, 42, 0.40),
+                    transparent 40%
                 ),
 
                 radial-gradient(
-                    circle at 10% 50%,
-                    rgba(184, 134, 11, 0.15),
-                    transparent 50%
+                    circle at 85% 60%,
+                    rgba(91, 72, 20, 0.18),
+                    transparent 45%
                 ),
 
-                radial-gradient(
-                    circle at 90% 50%,
-                    rgba(139, 0, 0, 0.25),
-                    transparent 50%
+                linear-gradient(
+                    135deg,
+                    #050d08 0%,
+                    #0a1c10 35%,
+                    #102c1a 65%,
+                    #061109 100%
                 );
 
             color: var(--text-light);
@@ -79,53 +96,87 @@
                 serif;
 
             padding: 20px 10px;
-
-            min-height: 100vh;
         }
 
 
+        /* ==========================================
+           CONTAINER
+        ========================================== */
+
         .container {
 
-            max-width: 1050px;
+            max-width: 1100px;
 
-            margin: 0 auto;
+            margin: auto;
 
             position: relative;
         }
 
 
-        /* =================================
-           CABEÇALHO
-        ================================= */
+        /* ==========================================
+           HEADER
+        ========================================== */
 
         header {
 
             text-align: center;
 
-            padding: 35px 20px 30px;
+            padding: 38px 20px 32px;
 
             margin-bottom: 25px;
 
             background:
+
                 linear-gradient(
                     180deg,
-                    rgba(25, 10, 30, 0.95) 0%,
-                    rgba(15, 8, 18, 0.98) 100%
+                    rgba(12, 32, 19, 0.98),
+                    rgba(5, 16, 10, 0.98)
                 );
 
-            border: 3px solid var(--border-gold);
+            border:
 
-            border-radius: 12px;
+                3px solid
+                var(--border-gold);
+
+            border-radius: 14px;
 
             box-shadow:
-                0 0 30px rgba(0, 0, 0, 0.9),
-                inset 0 0 20px rgba(197, 160, 89, 0.3);
+
+                0 10px 40px rgba(0,0,0,0.8),
+
+                inset 0 0 30px
+                rgba(184,148,78,0.18),
+
+                0 0 20px
+                rgba(50,100,55,0.25);
 
             position: relative;
 
             overflow: hidden;
         }
 
+
+        header::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 7px;
+
+            border:
+                1px solid
+                rgba(214,180,92,0.25);
+
+            border-radius: 9px;
+
+            pointer-events: none;
+        }
+
+
+        /* ==========================================
+           MAGIC GRAVITY
+        ========================================== */
 
         .magic-gravity-brand {
 
@@ -134,40 +185,59 @@
                 'Cinzel',
                 serif;
 
-            color: #d8b4fe;
+            font-size: 3.1rem;
 
-            font-size: 1.5rem;
+            font-weight: 900;
 
-            letter-spacing: 6px;
+            letter-spacing: 8px;
 
             text-transform: uppercase;
 
-            text-shadow:
-                0 0 12px var(--purple-glow),
-                0 0 25px var(--purple-glow);
+            color: #e4c36d;
 
-            margin-bottom: 8px;
+            margin-bottom: 10px;
 
             display: inline-block;
+
+            text-shadow:
+
+                0 2px 0 #5d4519,
+
+                0 4px 8px #000,
+
+                0 0 12px rgba(214,180,92,0.65),
+
+                0 0 30px rgba(120,90,30,0.4);
+        }
+
+
+        .magic-gravity-brand::first-letter {
+            color: var(--gold-bright);
         }
 
 
         header::before {
 
-            content: "👑 ⚜ ⚔ ⚜ 👑";
+            content:
+                "👑  ⚜  ⚔  ⚜  👑";
 
             display: block;
 
-            color: var(--gold);
+            color:
+                var(--gold);
 
-            font-size: 1.5rem;
+            font-size:
+                1.4rem;
 
-            margin-bottom: 10px;
+            margin-bottom:
+                8px;
 
-            letter-spacing: 12px;
+            letter-spacing:
+                10px;
 
             text-shadow:
-                0 0 10px var(--gold-dark);
+                0 0 10px
+                var(--gold-dark);
         }
 
 
@@ -178,39 +248,50 @@
                 'Cinzel',
                 serif;
 
-            color: var(--gold-bright);
+            color:
+                #f4d98a;
 
-            font-size: 2.8rem;
+            font-size:
+                2.8rem;
+
+            letter-spacing:
+                4px;
 
             text-shadow:
-                0 0 15px rgba(245, 215, 127, 0.6),
-                3px 3px 6px #000;
 
-            letter-spacing: 3px;
+                0 3px 5px #000,
 
-            line-height: 1.2;
+                0 0 15px
+                rgba(245,215,127,0.35);
         }
 
 
         header p {
 
-            color: var(--gold);
+            color:
+                #c9bd98;
 
-            font-family: 'Cinzel', serif;
+            font-family:
+                'Cinzel',
+                serif;
 
-            font-style: italic;
+            font-style:
+                italic;
 
-            margin-top: 10px;
+            font-size:
+                1.05rem;
 
-            font-size: 1.15rem;
+            margin-top:
+                12px;
 
-            letter-spacing: 1px;
+            letter-spacing:
+                1px;
         }
 
 
-        /* =================================
+        /* ==========================================
            REALEZA
-        ================================= */
+        ========================================== */
 
         .royalty-banner {
 
@@ -219,49 +300,63 @@
             grid-template-columns:
                 repeat(
                     auto-fit,
-                    minmax(200px, 1fr)
+                    minmax(220px, 1fr)
                 );
 
-            gap: 15px;
+            gap: 18px;
 
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
 
         .royal-card {
 
             background:
+
                 linear-gradient(
                     145deg,
-                    #2a0808,
-                    #120a1c
+                    #172f1d,
+                    #08150d
                 );
 
-            border: 2px solid var(--border-gold);
+            border:
+                2px solid
+                var(--border-gold);
 
-            border-radius: 10px;
+            border-radius:
+                10px;
 
-            overflow: hidden;
+            overflow:
+                hidden;
 
-            text-align: center;
+            text-align:
+                center;
 
             box-shadow:
-                0 6px 15px rgba(0,0,0,0.7),
-                inset 0 0 15px rgba(197, 160, 89, 0.2);
+
+                0 8px 20px
+                rgba(0,0,0,0.8),
+
+                inset 0 0 18px
+                rgba(184,148,78,0.12);
 
             transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
+                0.3s ease;
         }
 
 
         .royal-card:hover {
 
-            transform: translateY(-6px);
+            transform:
+                translateY(-7px);
 
             box-shadow:
-                0 10px 28px rgba(245, 215, 127, 0.5),
-                0 0 15px rgba(157, 78, 221, 0.25);
+
+                0 14px 30px
+                rgba(0,0,0,0.9),
+
+                0 0 18px
+                rgba(214,180,92,0.25);
         }
 
 
@@ -269,29 +364,30 @@
 
             width: 100%;
 
-            height: 250px;
+            height: 270px;
 
             object-fit: cover;
 
             object-position: center;
 
+            display: block;
+
             border-bottom:
-                2px solid var(--border-gold);
+                2px solid
+                var(--border-gold);
 
             filter:
-                sepia(0.08)
-                contrast(1.15)
-                brightness(0.92);
 
-            display: block;
+                sepia(0.08)
+                contrast(1.12)
+                brightness(0.9);
         }
 
 
-        /* Ajuste específico do rei */
-
         .royal-card:first-child img {
 
-            object-position: center top;
+            object-position:
+                center top;
         }
 
 
@@ -304,130 +400,141 @@
             color:
                 var(--gold-bright);
 
-            margin:
-                10px 0 3px;
+            font-size:
+                1.05rem;
 
-            font-size: 1rem;
+            margin:
+                11px 0 4px;
 
             text-shadow:
-                0 0 6px rgba(245,215,127,0.3);
+                0 2px 5px #000;
         }
 
 
         .royal-card span {
 
+            display:
+                block;
+
             color:
                 var(--text-muted);
 
             font-size:
-                0.8rem;
+                0.82rem;
 
-            display: block;
-
-            margin-bottom: 10px;
-
-            padding: 0 8px;
+            padding:
+                0 8px 12px;
         }
 
 
-        /* =================================
-           ABAS
-        ================================= */
+        /* ==========================================
+           NAVEGAÇÃO
+        ========================================== */
 
         .nav-tabs {
 
-            display: flex;
+            display:
+                flex;
 
-            justify-content: center;
+            justify-content:
+                center;
 
-            gap: 15px;
+            gap:
+                15px;
 
-            margin-bottom: 25px;
+            flex-wrap:
+                wrap;
 
-            flex-wrap: wrap;
+            margin-bottom:
+                25px;
         }
 
 
         .tab-btn {
 
             background:
+
                 linear-gradient(
                     180deg,
-                    #3d0c0c 0%,
-                    #170505 100%
+                    #183a22,
+                    #07160c
                 );
 
             color:
                 var(--gold);
 
             border:
-                2px solid var(--border-gold);
+                2px solid
+                var(--border-gold);
 
             padding:
-                14px 30px;
-
-            cursor:
-                pointer;
+                14px 28px;
 
             border-radius:
                 8px;
+
+            cursor:
+                pointer;
 
             font-family:
                 'Cinzel',
                 serif;
 
             font-weight:
-                800;
+                900;
 
             font-size:
-                1rem;
+                0.95rem;
 
             text-transform:
                 uppercase;
 
             letter-spacing:
-                2px;
+                1.5px;
 
             transition:
-                all 0.3s ease;
+                0.25s;
 
             box-shadow:
-                0 5px 15px rgba(0,0,0,0.7);
+                0 5px 15px
+                rgba(0,0,0,0.7);
         }
 
 
-        .tab-btn.active,
-        .tab-btn:hover {
+        .tab-btn:hover,
+        .tab-btn.active {
 
             background:
+
                 linear-gradient(
                     180deg,
-                    var(--gold) 0%,
-                    var(--gold-dark) 100%
+                    #d8b966,
+                    #8b6924
                 );
 
             color:
-                #0a0502;
+                #0a0e08;
 
             border-color:
-                var(--gold-bright);
+                #ffe9a0;
 
             box-shadow:
                 0 0 20px
-                rgba(245,215,127,0.7);
+                rgba(214,180,92,0.55);
 
             transform:
                 translateY(-2px);
         }
 
 
-        /* =================================
+        /* ==========================================
            GRID
-        ================================= */
+        ========================================== */
 
         .grid {
 
-            display: grid;
+            display:
+                grid;
 
             grid-template-columns:
                 repeat(
@@ -435,30 +542,45 @@
                     minmax(290px, 1fr)
                 );
 
-            gap: 22px;
+            gap:
+                22px;
         }
 
 
+        /* ==========================================
+           CARDS
+        ========================================== */
+
         .card {
 
+            position:
+                relative;
+
             background:
-                var(--parchment-card);
+
+                linear-gradient(
+                    145deg,
+                    rgba(20,45,28,0.98),
+                    rgba(8,22,13,0.98)
+                );
 
             border:
-                2px solid var(--border-gold);
-
-            padding:
-                22px;
+                2px solid
+                var(--border-gold);
 
             border-radius:
                 10px;
 
-            box-shadow:
-                0 10px 25px rgba(0,0,0,0.8),
-                inset 0 0 25px rgba(0,0,0,0.6);
+            padding:
+                22px;
 
-            position:
-                relative;
+            box-shadow:
+
+                0 10px 25px
+                rgba(0,0,0,0.75),
+
+                inset 0 0 25px
+                rgba(0,0,0,0.5);
         }
 
 
@@ -470,20 +592,20 @@
             position:
                 absolute;
 
-            top:
-                6px;
-
             right:
-                12px;
+                13px;
+
+            top:
+                7px;
 
             color:
-                var(--border-gold);
+                var(--gold);
+
+            opacity:
+                0.45;
 
             font-size:
                 1.2rem;
-
-            opacity:
-                0.5;
         }
 
 
@@ -498,7 +620,8 @@
                 var(--gold-bright);
 
             border-bottom:
-                2px solid var(--border-gold);
+                2px solid
+                var(--border-gold);
 
             padding-bottom:
                 8px;
@@ -510,8 +633,7 @@
                 1.3rem;
 
             text-shadow:
-                0 0 8px
-                rgba(245,215,127,0.3);
+                0 2px 5px #000;
         }
 
 
@@ -530,32 +652,24 @@
 
 
         ul {
-
-            padding-left:
-                20px;
+            padding-left: 20px;
         }
 
 
         li {
-
-            margin-bottom:
-                10px;
-
-            color:
-                var(--text-muted);
+            margin-bottom: 10px;
+            color: var(--text-muted);
         }
 
 
         li strong {
-
-            color:
-                var(--gold);
+            color: var(--gold);
         }
 
 
-        /* =================================
+        /* ==========================================
            STATUS
-        ================================= */
+        ========================================== */
 
         .stats-box {
 
@@ -566,7 +680,7 @@
                 space-around;
 
             background:
-                rgba(0,0,0,0.7);
+                rgba(0,0,0,0.55);
 
             padding:
                 15px;
@@ -578,17 +692,16 @@
                 15px 0;
 
             border:
-                1px solid var(--border-gold);
+                1px solid
+                var(--border-gold);
 
             box-shadow:
-                inset 0 0 10px rgba(0,0,0,0.8);
+                inset 0 0 12px #000;
         }
 
 
         .stat-item {
-
-            text-align:
-                center;
+            text-align: center;
         }
 
 
@@ -611,41 +724,42 @@
 
         .stat-lbl {
 
-            font-size:
-                0.8rem;
-
-            color:
-                var(--gold);
-
-            text-transform:
-                uppercase;
-
             font-family:
                 'Cinzel',
                 serif;
 
+            color:
+                var(--gold);
+
+            font-size:
+                0.75rem;
+
             margin-top:
                 4px;
+
+            text-transform:
+                uppercase;
         }
 
 
-        /* =================================
-           BARRA DE XP
-        ================================= */
+        /* ==========================================
+           XP
+        ========================================== */
 
         .bar-bg {
-
-            background:
-                #000;
 
             height:
                 18px;
 
-            border-radius:
-                9px;
+            background:
+                #020603;
 
             border:
-                1px solid var(--border-gold);
+                1px solid
+                var(--border-gold);
+
+            border-radius:
+                10px;
 
             overflow:
                 hidden;
@@ -660,104 +774,110 @@
 
         .bar-fill {
 
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--gold-dark),
-                    var(--gold),
-                    var(--gold-bright)
-                );
-
             height:
                 100%;
 
             width:
                 0%;
 
-            transition:
-                width 0.4s ease-out;
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #79601e,
+                    #d6b45c,
+                    #fff0a8
+                );
 
             box-shadow:
-                0 0 12px var(--gold);
+                0 0 15px
+                var(--gold);
+
+            transition:
+                width 0.4s ease;
         }
 
 
-        /* =================================
+        /* ==========================================
            BOTÕES
-        ================================= */
+        ========================================== */
 
         .btn {
-
-            background:
-                linear-gradient(
-                    180deg,
-                    #500a0a 0%,
-                    #200202 100%
-                );
-
-            color:
-                var(--gold-bright);
-
-            border:
-                2px solid var(--border-gold);
-
-            padding:
-                14px;
 
             width:
                 100%;
 
+            padding:
+                14px;
+
+            margin-top:
+                10px;
+
             border-radius:
                 6px;
 
-            cursor:
-                pointer;
+            border:
+                2px solid
+                var(--border-gold);
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    #315f39,
+                    #0b2414
+                );
+
+            color:
+                var(--gold-bright);
 
             font-family:
                 'Cinzel',
                 serif;
 
             font-weight:
-                bold;
+                900;
 
             font-size:
-                0.95rem;
+                0.9rem;
 
             text-transform:
                 uppercase;
 
-            margin-top:
-                10px;
-
-            transition:
-                all 0.25s ease;
-
-            box-shadow:
-                0 4px 10px rgba(0,0,0,0.5);
-
             letter-spacing:
                 1px;
+
+            cursor:
+                pointer;
+
+            transition:
+                0.25s;
+
+            box-shadow:
+                0 5px 12px
+                rgba(0,0,0,0.6);
         }
 
 
         .btn:hover {
 
             background:
+
                 linear-gradient(
                     180deg,
-                    var(--royal-red) 0%,
-                    #400000 100%
+                    #4b793e,
+                    #17391f
                 );
 
             border-color:
                 var(--gold-bright);
 
             box-shadow:
-                0 0 15px
-                rgba(245,215,127,0.6);
+                0 0 16px
+                rgba(214,180,92,0.5);
 
-            color:
-                #fff;
+            transform:
+                translateY(-2px);
         }
 
 
@@ -769,31 +889,19 @@
             cursor:
                 not-allowed;
 
-            border-color:
-                #554433;
-
-            background:
-                #100b08;
-
-            color:
-                var(--text-muted);
+            transform:
+                none;
 
             box-shadow:
                 none;
         }
 
 
-        /* =================================
+        /* ==========================================
            DIÁRIO
-        ================================= */
+        ========================================== */
 
         .log {
-
-            background:
-                #0a0604;
-
-            border:
-                2px solid var(--border-gold);
 
             height:
                 160px;
@@ -804,19 +912,18 @@
             padding:
                 12px;
 
-            font-family:
-                'MedievalSharp',
-                Georgia,
-                serif;
+            background:
+                #040a06;
 
-            font-size:
-                0.95rem;
-
-            color:
-                var(--text-muted);
+            border:
+                2px solid
+                var(--border-gold);
 
             border-radius:
                 6px;
+
+            color:
+                var(--text-muted);
 
             box-shadow:
                 inset 0 0 15px #000;
@@ -828,12 +935,12 @@
             margin-bottom:
                 6px;
 
+            padding-bottom:
+                4px;
+
             border-bottom:
                 1px solid
-                rgba(197,160,89,0.1);
-
-            padding-bottom:
-                3px;
+                rgba(184,148,78,0.12);
         }
 
 
@@ -850,18 +957,18 @@
         .log-entry.magic {
 
             color:
-                var(--purple-glow);
+                #bd8de2;
 
             font-weight:
                 bold;
         }
 
 
-        /* =================================
-           RESPONSIVO
-        ================================= */
+        /* ==========================================
+           MOBILE
+        ========================================== */
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
 
             body {
                 padding: 10px 6px;
@@ -869,36 +976,38 @@
 
 
             header {
-                padding: 25px 12px;
-            }
-
-
-            header h1 {
-                font-size: 2rem;
+                padding: 28px 12px;
             }
 
 
             .magic-gravity-brand {
 
                 font-size:
-                    1rem;
+                    1.9rem;
 
                 letter-spacing:
-                    3px;
+                    4px;
+            }
+
+
+            header h1 {
+
+                font-size:
+                    2rem;
             }
 
 
             header p {
 
                 font-size:
-                    0.9rem;
+                    0.85rem;
             }
 
 
             .royal-card img {
 
                 height:
-                    220px;
+                    240px;
             }
 
 
@@ -906,25 +1015,21 @@
 
                 width:
                     100%;
-
-                padding:
-                    12px;
             }
 
 
             .stats-box {
 
                 gap:
-                    10px;
+                    8px;
             }
 
 
             .stat-val {
 
                 font-size:
-                    1.2rem;
+                    1.15rem;
             }
-
         }
 
     </style>
@@ -933,17 +1038,18 @@
 
 <body>
 
+
 <div class="container">
 
 
-    <!-- =================================
+    <!-- ========================================
          CABEÇALHO
-    ================================= -->
+    ======================================== -->
 
     <header>
 
         <div class="magic-gravity-brand">
-            ✨ Magic Gravity ✨
+            ✨ MAGIC GRAVITY ✨
         </div>
 
         <h1>
@@ -958,23 +1064,20 @@
     </header>
 
 
-    <!-- =================================
+    <!-- ========================================
          REALEZA
-    ================================= -->
+    ======================================== -->
 
     <div class="royalty-banner">
 
 
-        <!-- =============================
-             REI
-        ============================== -->
+        <!-- REI -->
 
         <div class="royal-card">
 
             <img
                 src="https://images.treccani.it/ext-tool/extra/images/6/69/690e69837d06cfe83936140758304df5.jpg"
                 alt="Rei medieval"
-                id="king-img"
             >
 
             <h4>
@@ -988,15 +1091,13 @@
         </div>
 
 
-        <!-- =============================
-             RAINHA
-        ============================== -->
+        <!-- RAINHA -->
 
         <div class="royal-card">
 
             <img
-                src="https://media.easy-peasy.ai/19727734-2169-4093-bde2-8b60ecf5df7d/60716b53-95d0-42f8-b36d-312ca267698_medium.webp"
-                alt="Rainha medieval em um castelo"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Elizabeth_I_in_coronation_robes.jpg/640px-Elizabeth_I_in_coronation_robes.jpg"
+                alt="Rainha Elizabeth I em trajes de coroação"
             >
 
             <h4>
@@ -1010,9 +1111,7 @@
         </div>
 
 
-        <!-- =============================
-             ARQUIMAGO
-        ============================== -->
+        <!-- ARQUIMAGO -->
 
         <div class="royal-card">
 
@@ -1034,9 +1133,9 @@
     </div>
 
 
-    <!-- =================================
+    <!-- ========================================
          NAVEGAÇÃO
-    ================================= -->
+    ======================================== -->
 
     <div class="nav-tabs">
 
@@ -1058,9 +1157,9 @@
     </div>
 
 
-    <!-- =================================
+    <!-- ========================================
          APRESENTAÇÃO
-    ================================= -->
+    ======================================== -->
 
     <div id="tab-presentation">
 
@@ -1181,9 +1280,9 @@
     </div>
 
 
-    <!-- =================================
+    <!-- ========================================
          JOGO
-    ================================= -->
+    ======================================== -->
 
     <div
         id="tab-game"
@@ -1379,9 +1478,7 @@
         </div>
 
 
-        <!-- =================================
-             CRÔNICAS
-        ================================= -->
+        <!-- CRÔNICAS -->
 
         <div
             class="card"
@@ -1419,16 +1516,12 @@
 </div>
 
 
-<!-- =================================
-     JAVASCRIPT
-================================= -->
-
 <script>
 
 
-    /* =================================
+    /* ========================================
        JOGADOR
-    ================================= */
+    ======================================== */
 
     let player = {
 
@@ -1447,9 +1540,9 @@
     };
 
 
-    /* =================================
-       TROCAR ABA
-    ================================= */
+    /* ========================================
+       ABAS
+    ======================================== */
 
     function switchTab(tab) {
 
@@ -1469,19 +1562,19 @@
                 : 'none';
 
 
-        const btns =
+        const buttons =
             document.querySelectorAll(
                 '.tab-btn'
             );
 
 
-        btns[0].classList.toggle(
+        buttons[0].classList.toggle(
             'active',
             tab === 'presentation'
         );
 
 
-        btns[1].classList.toggle(
+        buttons[1].classList.toggle(
             'active',
             tab === 'game'
         );
@@ -1489,16 +1582,16 @@
     }
 
 
-    /* =================================
-       DIÁRIO
-    ================================= */
+    /* ========================================
+       LOG
+    ======================================== */
 
     function addLog(
-        msg,
+        message,
         type = ''
     ) {
 
-        const logBox =
+        const log =
             document.getElementById(
                 'game-log'
             );
@@ -1515,23 +1608,22 @@
 
 
         entry.textContent =
-            `> ${msg}`;
+            `> ${message}`;
 
 
-        logBox.appendChild(
+        log.appendChild(
             entry
         );
 
 
-        logBox.scrollTop =
-            logBox.scrollHeight;
-
+        log.scrollTop =
+            log.scrollHeight;
     }
 
 
-    /* =================================
-       GANHAR XP
-    ================================= */
+    /* ========================================
+       XP
+    ======================================== */
 
     function gainXP(amount) {
 
@@ -1564,13 +1656,12 @@
 
 
         updateUI();
-
     }
 
 
-    /* =================================
-       CAÇAR MONSTROS
-    ================================= */
+    /* ========================================
+       CAÇA
+    ======================================== */
 
     function hunt() {
 
@@ -1614,7 +1705,7 @@
         ];
 
 
-        const m =
+        const monster =
             monsters[
                 Math.floor(
                     Math.random() *
@@ -1624,24 +1715,24 @@
 
 
         player.gold +=
-            m.gold;
+            monster.gold;
 
 
         addLog(
-            `Vitória! Derrotou o ${m.name}! Ganhou +${m.xp} XP e saqueou +${m.gold} Moedas de Ouro.`
+            `Vitória! Derrotou o ${monster.name}! Ganhou +${monster.xp} XP e saqueou +${monster.gold} Moedas de Ouro.`
         );
 
 
         gainXP(
-            m.xp
+            monster.xp
         );
 
     }
 
 
-    /* =================================
-       ADOTAR CRIATURA
-    ================================= */
+    /* ========================================
+       MASCOTES
+    ======================================== */
 
     function adopt(
         petName,
@@ -1673,15 +1764,14 @@
 
 
             updateUI();
-
         }
 
     }
 
 
-    /* =================================
-       ATUALIZAR INTERFACE
-    ================================= */
+    /* ========================================
+       ATUALIZAÇÃO DA INTERFACE
+    ======================================== */
 
     function updateUI() {
 
@@ -1709,7 +1799,7 @@
             player.rate;
 
 
-        const pct =
+        const percentage =
             (
                 player.xp /
                 player.nextXp
@@ -1719,7 +1809,7 @@
         document.getElementById(
             'xp-bar'
         ).style.width =
-            `${pct}%`;
+            `${percentage}%`;
 
 
         document.getElementById(
@@ -1740,9 +1830,9 @@
     }
 
 
-    /* =================================
-       XP AUTOMÁTICO
-    ================================= */
+    /* ========================================
+       XP PASSIVO
+    ======================================== */
 
     setInterval(
         () => {
@@ -1756,9 +1846,9 @@
     );
 
 
-    /* =================================
+    /* ========================================
        INICIALIZAÇÃO
-    ================================= */
+    ======================================== */
 
     updateUI();
 
