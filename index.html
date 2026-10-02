@@ -12,7 +12,7 @@
         .tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 15px; }
         .tab-btn { background: #2a2a3d; color: var(--gold); border: 1px solid var(--gold); padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; }
         .tab-btn.active { background: var(--gold); color: #000; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
         .card { background: var(--card); border: 1px solid #2e2e42; padding: 12px; border-radius: 8px; }
         .card h3 { color: var(--gold); margin-bottom: 6px; border-bottom: 1px solid #2e2e42; }
         .stats { display: flex; justify-content: space-around; background: #0a0a0f; padding: 6px; border-radius: 4px; margin: 8px 0; }
@@ -21,20 +21,20 @@
         .btn { background: #2a2a3d; color: var(--gold); border: 1px solid var(--gold); padding: 8px; width: 100%; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 6px; }
         .btn:hover { background: var(--gold); color: #000; }
         .btn:disabled { opacity: 0.4; cursor: not-allowed; }
-        .log { background: #0a0a0f; border: 1px solid #2e2e42; height: 100px; overflow-y: auto; padding: 6px; font-family: monospace; font-size: 0.8rem; color: var(--dim); }
+        .log { background: #0a0a0f; border: 1px solid #2e2e42; height: 90px; overflow-y: auto; padding: 6px; font-family: monospace; font-size: 0.8rem; color: var(--dim); }
     </style>
 </head>
 <body>
     <header><h1>Rocha Chueiri</h1><p>Escola Mágica Ancestral das Montanhas Nebulosas</p></header>
     <div class="tabs">
         <button class="tab-btn active" onclick="switchTab('p')">📜 Apresentação</button>
-        <button class="tab-btn" onclick="switchTab('g')">🎮 Jogo</button>
+        <button class="tab-btn" onclick="switchTab('g')">🎮 Simulador RPG</button>
     </div>
     <div id="p-tab">
         <div class="grid">
-            <div class="card"><h3>🏰 O Cenário</h3><p>Escondida nas Montanhas Nebulosas, a Rocha Chueiri reúne jovens de várias raças para aprender magia com grifos e dragões.</p></div>
-            <div class="card"><h3>🏆 O Torneio</h3><p>Organizado pelo Arquimago Professor, turmas e famílias disputam o troféu em provas que revelam segredos ocultos.</p></div>
-            <div class="card"><h3>⚡ Evolução</h3><p><b>Estudo:</b> Acontece constante à distância (+XP passivo).<br><b>Caça:</b> Exige presença para derrotar feras e ganhar ouro.</p></div>
+            <div class="card"><h3>🏰 Lore & Escola</h3><p>Escondida nas Montanhas Nebulosas, a Rocha Chueiri reúne jovens de várias raças para aprender magia com grifos, fênixes e dragões.</p></div>
+            <div class="card"><h3>🏆 O Torneio</h3><p>O Arquimago Professor organiza a competição entre famílias e turmas em busca do troféu e revelação de segredos ocultos.</p></div>
+            <div class="card"><h3>⚡ Evolução</h3><p><b>Estudo:</b> Teoria contínua à distância (+XP passivo).<br><b>Caça:</b> Presença e coragem para vencer feras e obter ouro.</p></div>
         </div>
     </div>
     <div id="g-tab" style="display:none;">
@@ -46,18 +46,18 @@
             </div>
             <div class="card">
                 <h3>Sabedoria Contínua</h3>
-                <p style="color:var(--dim); font-size:0.8rem;">Estudo passivo contínuo pela biblioteca.</p>
-                <div style="color:var(--gold); font-size:1.1rem; text-align:center; margin-top:5px;"><span id="rate">1</span> XP/s</div>
+                <p style="color:var(--dim); font-size:0.8rem;">Sussurro constante de magia à distância.</p>
+                <div style="color:var(--gold); font-size:1.1rem; text-align:center; margin-top:5px;">+<span id="rate">1</span> XP/s</div>
             </div>
             <div class="card">
-                <h3>Caça & Criaturas</h3>
+                <h3>Caça & Companheiros</h3>
                 <button class="btn" onclick="hunt()">⚔️ Caçar Monstros</button>
                 <button class="btn" id="b-gri" onclick="buyPet('Grifo', 50, 3)">🦅 Adotar Grifo (50 G)</button>
                 <button class="btn" id="b-dra" onclick="buyPet('Dragão', 200, 8)">🐉 Adotar Dragão (200 G)</button>
             </div>
         </div>
         <div class="card" style="margin-top:10px;">
-            <h3>Registros</h3>
+            <h3>Registros da Academia</h3>
             <div class="log" id="log"><div>[Sistema] Bem-vindo à Rocha Chueiri!</div></div>
         </div>
     </div>
@@ -79,7 +79,7 @@
             p.gold += m.g; log(`Derrotou ${m.n}! +${m.x} XP, +${m.g} Ouro.`); addXP(m.x);
         }
         function buyPet(n, c, r) {
-            if (p.gold >= c && p.pet !== n) { p.gold -= c; p.pet = n; p.rate = r; log(`✨ Adotou um ${n}! XP: +${r}/s.`); update(); }
+            if (p.gold >= c && p.pet !== n) { p.gold -= c; p.pet = n; p.rate = r; log(`✨ Pacto com ${n}! XP: +${r}/s.`); update(); }
         }
         function update() {
             document.getElementById('lvl').innerText = p.lvl; document.getElementById('gold').innerText = p.gold;
