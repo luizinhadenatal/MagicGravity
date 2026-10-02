@@ -1,1856 +1,1974 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Magic Gravity - Rocha Chueiri</title>
+<title>MAGIC GRAVITY - Rocha Chueiri</title>
 
-    <!-- FONTES MEDIEVAIS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
 
-    <style>
+<style>
 
-        :root {
-            --gold: #d6b45c;
-            --gold-bright: #ffe9a0;
-            --gold-dark: #8c6a24;
+:root {
+    --gold: #d4af55;
+    --gold-light: #fff1a8;
+    --gold-dark: #795b1c;
 
-            --bronze: #9c6b30;
+    --green-dark: #020b05;
+    --green: #0a2112;
+    --green-medium: #123a20;
+    --green-light: #24552d;
 
-            --forest-dark: #07150d;
-            --forest: #0b2416;
-            --forest-light: #123b24;
-            --forest-card: #14291c;
+    --brown: #332313;
+    --red: #680d0d;
 
-            --royal-red: #650909;
+    --text: #f3ecdb;
+    --muted: #bdb59f;
 
-            --purple-glow: #8d5bb5;
+    --border: #b8954a;
+}
 
-            --stone: #252821;
+/* =========================
+   RESET
+========================= */
 
-            --border-gold: #b8944e;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-            --text-light: #eee7d5;
-            --text-muted: #aaa995;
-        }
+/* =========================
+   FUNDO
+========================= */
 
+body {
 
-        /* ==========================================
-           RESET
-        ========================================== */
+    min-height: 100vh;
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    background-color: var(--green-dark);
 
+    background-image:
 
-        /* ==========================================
-           FUNDO VERDE MEDIEVAL
-        ========================================== */
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(66, 126, 69, 0.45),
+            transparent 45%
+        ),
 
-        body {
+        radial-gradient(
+            circle at 0% 50%,
+            rgba(18, 75, 38, 0.5),
+            transparent 40%
+        ),
 
-            min-height: 100vh;
+        radial-gradient(
+            circle at 100% 70%,
+            rgba(105, 85, 25, 0.2),
+            transparent 40%
+        ),
 
-            background-color: var(--forest-dark);
+        linear-gradient(
+            135deg,
+            #010502,
+            #06160b,
+            #0c2815,
+            #020b05
+        );
 
-            background-image:
+    color: var(--text);
 
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(41, 94, 54, 0.55),
-                    transparent 45%
-                ),
+    font-family:
+        'MedievalSharp',
+        Georgia,
+        serif;
 
-                radial-gradient(
-                    circle at 15% 40%,
-                    rgba(22, 74, 42, 0.40),
-                    transparent 40%
-                ),
+    padding: 20px 10px;
+}
 
-                radial-gradient(
-                    circle at 85% 60%,
-                    rgba(91, 72, 20, 0.18),
-                    transparent 45%
-                ),
+/* =========================
+   CONTAINER
+========================= */
 
-                linear-gradient(
-                    135deg,
-                    #050d08 0%,
-                    #0a1c10 35%,
-                    #102c1a 65%,
-                    #061109 100%
-                );
+.container {
 
-            color: var(--text-light);
+    max-width: 1150px;
 
-            font-family:
-                'MedievalSharp',
-                Georgia,
-                serif;
+    margin: auto;
 
-            padding: 20px 10px;
-        }
+    width: 100%;
+}
 
+/* =========================
+   HEADER
+========================= */
 
-        /* ==========================================
-           CONTAINER
-        ========================================== */
+header {
 
-        .container {
+    position: relative;
 
-            max-width: 1100px;
+    text-align: center;
 
-            margin: auto;
+    padding: 35px 20px 45px;
 
-            position: relative;
-        }
+    margin-bottom: 25px;
 
+    background:
 
-        /* ==========================================
-           HEADER
-        ========================================== */
+        linear-gradient(
+            180deg,
+            rgba(20, 61, 31, 0.98),
+            rgba(3, 15, 8, 0.99)
+        );
 
-        header {
+    border:
+        4px solid
+        var(--border);
 
-            text-align: center;
+    border-radius: 15px;
 
-            padding: 38px 20px 32px;
+    box-shadow:
 
-            margin-bottom: 25px;
+        0 15px 45px
+        rgba(0,0,0,.9),
 
-            background:
+        inset 0 0 35px
+        rgba(0,0,0,.8),
 
-                linear-gradient(
-                    180deg,
-                    rgba(12, 32, 19, 0.98),
-                    rgba(5, 16, 10, 0.98)
-                );
+        0 0 30px
+        rgba(55,120,65,.25);
 
-            border:
+    overflow: hidden;
+}
 
-                3px solid
-                var(--border-gold);
+/* DECORAÇÃO */
 
-            border-radius: 14px;
+header::before {
 
-            box-shadow:
+    content:
+        "👑  ⚜  ⚔  ⚜  👑";
 
-                0 10px 40px rgba(0,0,0,0.8),
+    display: block;
 
-                inset 0 0 30px
-                rgba(184,148,78,0.18),
+    color:
+        var(--gold-light);
 
-                0 0 20px
-                rgba(50,100,55,0.25);
+    font-size:
+        1.5rem;
 
-            position: relative;
+    letter-spacing:
+        10px;
 
-            overflow: hidden;
-        }
+    margin-bottom:
+        15px;
 
+    text-shadow:
+        0 0 12px
+        var(--gold);
+}
 
-        header::after {
+/* =========================
+   MAGIC GRAVITY
+========================= */
 
-            content: "";
+.magic-title {
 
-            position: absolute;
+    display: inline-block;
 
-            inset: 7px;
+    font-family:
+        'Cinzel Decorative',
+        'Cinzel',
+        serif;
 
-            border:
-                1px solid
-                rgba(214,180,92,0.25);
+    font-size:
+        clamp(3.2rem, 9vw, 7rem);
 
-            border-radius: 9px;
+    font-weight: 900;
 
-            pointer-events: none;
-        }
+    line-height: 1;
 
+    letter-spacing:
+        clamp(3px, 1.2vw, 14px);
 
-        /* ==========================================
-           MAGIC GRAVITY
-        ========================================== */
+    color:
+        #f4d878;
 
-        .magic-gravity-brand {
+    text-transform:
+        uppercase;
 
-            font-family:
-                'Cinzel Decorative',
-                'Cinzel',
-                serif;
+    margin: 5px 0 25px;
 
-            font-size: 3.1rem;
+    text-shadow:
 
-            font-weight: 900;
+        0 3px 0 #8a641c,
 
-            letter-spacing: 8px;
+        0 6px 0 #513b13,
 
-            text-transform: uppercase;
+        0 9px 12px #000,
 
-            color: #e4c36d;
+        0 0 15px
+        rgba(255,225,120,.9),
 
-            margin-bottom: 10px;
+        0 0 35px
+        rgba(215,170,55,.8),
 
-            display: inline-block;
+        0 0 65px
+        rgba(67,120,60,.5);
+}
 
-            text-shadow:
+/* LINHA DOURADA */
 
-                0 2px 0 #5d4519,
+.magic-title::after {
 
-                0 4px 8px #000,
+    content: "";
 
-                0 0 12px rgba(214,180,92,0.65),
+    display: block;
 
-                0 0 30px rgba(120,90,30,0.4);
-        }
+    height: 4px;
 
+    margin:
+        14px 5% 0;
 
-        .magic-gravity-brand::first-letter {
-            color: var(--gold-bright);
-        }
+    background:
 
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            var(--gold-light),
+            var(--gold),
+            transparent
+        );
 
-        header::before {
+    box-shadow:
+        0 0 15px
+        var(--gold);
+}
 
-            content:
-                "👑  ⚜  ⚔  ⚜  👑";
+/* =========================
+   SUBTÍTULO
+========================= */
 
-            display: block;
+header h1 {
 
-            color:
-                var(--gold);
+    font-family:
+        'Cinzel',
+        serif;
 
-            font-size:
-                1.4rem;
+    color:
+        var(--gold-light);
 
-            margin-bottom:
-                8px;
+    font-size:
+        clamp(1.7rem, 4vw, 2.8rem);
 
-            letter-spacing:
-                10px;
+    letter-spacing:
+        4px;
 
-            text-shadow:
-                0 0 10px
-                var(--gold-dark);
-        }
+    margin-top:
+        8px;
 
+    text-shadow:
+        0 3px 6px #000;
+}
 
-        header h1 {
+header p {
 
-            font-family:
-                'Cinzel Decorative',
-                'Cinzel',
-                serif;
+    color:
+        #ddce98;
 
-            color:
-                #f4d98a;
+    font-family:
+        'Cinzel',
+        serif;
 
-            font-size:
-                2.8rem;
+    font-style:
+        italic;
 
-            letter-spacing:
-                4px;
+    margin-top:
+        12px;
 
-            text-shadow:
+    font-size:
+        1.05rem;
 
-                0 3px 5px #000,
+    letter-spacing:
+        2px;
+}
 
-                0 0 15px
-                rgba(245,215,127,0.35);
-        }
+/* =========================
+   REALEZA
+========================= */
 
+.royalty-banner {
 
-        header p {
+    display: grid;
 
-            color:
-                #c9bd98;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px, 1fr)
+        );
 
-            font-family:
-                'Cinzel',
-                serif;
+    gap:
+        18px;
 
-            font-style:
-                italic;
+    margin-bottom:
+        25px;
+}
 
-            font-size:
-                1.05rem;
+/* CARTÃO */
 
-            margin-top:
-                12px;
+.royal-card {
 
-            letter-spacing:
-                1px;
-        }
+    background:
 
+        linear-gradient(
+            145deg,
+            #173d22,
+            #06140b
+        );
 
-        /* ==========================================
-           REALEZA
-        ========================================== */
+    border:
+        2px solid
+        var(--border);
 
-        .royalty-banner {
+    border-radius:
+        12px;
 
-            display: grid;
+    overflow:
+        hidden;
 
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(220px, 1fr)
-                );
+    text-align:
+        center;
 
-            gap: 18px;
+    box-shadow:
 
-            margin-bottom: 28px;
-        }
+        0 10px 25px
+        rgba(0,0,0,.85),
 
+        inset 0 0 20px
+        rgba(0,0,0,.5);
 
-        .royal-card {
+    transition:
+        .3s;
+}
 
-            background:
+.royal-card:hover {
 
-                linear-gradient(
-                    145deg,
-                    #172f1d,
-                    #08150d
-                );
+    transform:
+        translateY(-7px);
 
-            border:
-                2px solid
-                var(--border-gold);
+    box-shadow:
 
-            border-radius:
-                10px;
+        0 15px 35px
+        rgba(0,0,0,.9),
 
-            overflow:
-                hidden;
+        0 0 25px
+        rgba(212,175,85,.35);
+}
 
-            text-align:
-                center;
+/* IMAGENS */
 
-            box-shadow:
+.royal-card img {
 
-                0 8px 20px
-                rgba(0,0,0,0.8),
+    width: 100%;
 
-                inset 0 0 18px
-                rgba(184,148,78,0.12);
+    height: 270px;
 
-            transition:
-                0.3s ease;
-        }
+    object-fit: cover;
 
+    display: block;
 
-        .royal-card:hover {
+    border-bottom:
+        2px solid
+        var(--border);
 
-            transform:
-                translateY(-7px);
+    filter:
+        contrast(1.1)
+        brightness(.92)
+        sepia(.08);
+}
 
-            box-shadow:
+.royal-card h4 {
 
-                0 14px 30px
-                rgba(0,0,0,0.9),
+    font-family:
+        'Cinzel',
+        serif;
 
-                0 0 18px
-                rgba(214,180,92,0.25);
-        }
+    color:
+        var(--gold-light);
 
+    margin:
+        12px 8px 4px;
 
-        .royal-card img {
+    font-size:
+        1.1rem;
 
-            width: 100%;
+    text-shadow:
+        0 2px 5px #000;
+}
 
-            height: 270px;
+.royal-card span {
 
-            object-fit: cover;
+    display:
+        block;
 
-            object-position: center;
+    color:
+        var(--muted);
 
-            display: block;
+    font-size:
+        .82rem;
 
-            border-bottom:
-                2px solid
-                var(--border-gold);
+    padding:
+        0 10px 14px;
+}
 
-            filter:
+/* =========================
+   ABAS
+========================= */
 
-                sepia(0.08)
-                contrast(1.12)
-                brightness(0.9);
-        }
+.nav-tabs {
 
+    display:
+        flex;
 
-        .royal-card:first-child img {
+    justify-content:
+        center;
 
-            object-position:
-                center top;
-        }
+    align-items:
+        center;
 
+    flex-wrap:
+        wrap;
 
-        .royal-card h4 {
+    gap:
+        14px;
 
-            font-family:
-                'Cinzel',
-                serif;
+    margin-bottom:
+        25px;
+}
 
-            color:
-                var(--gold-bright);
+.tab-btn {
 
-            font-size:
-                1.05rem;
+    background:
 
-            margin:
-                11px 0 4px;
+        linear-gradient(
+            180deg,
+            #24552e,
+            #07170c
+        );
 
-            text-shadow:
-                0 2px 5px #000;
-        }
+    color:
+        var(--gold);
 
+    border:
+        2px solid
+        var(--border);
 
-        .royal-card span {
+    padding:
+        15px 28px;
 
-            display:
-                block;
+    cursor:
+        pointer;
 
-            color:
-                var(--text-muted);
+    border-radius:
+        8px;
 
-            font-size:
-                0.82rem;
+    font-family:
+        'Cinzel',
+        serif;
 
-            padding:
-                0 8px 12px;
-        }
+    font-weight:
+        900;
 
+    font-size:
+        .95rem;
 
-        /* ==========================================
-           NAVEGAÇÃO
-        ========================================== */
+    text-transform:
+        uppercase;
 
-        .nav-tabs {
+    letter-spacing:
+        1px;
 
-            display:
-                flex;
+    box-shadow:
+        0 6px 15px
+        rgba(0,0,0,.7);
 
-            justify-content:
-                center;
+    transition:
+        .25s;
+}
 
-            gap:
-                15px;
+.tab-btn:hover,
+.tab-btn.active {
 
-            flex-wrap:
-                wrap;
+    background:
 
-            margin-bottom:
-                25px;
-        }
+        linear-gradient(
+            180deg,
+            #f0d477,
+            #927028
+        );
 
+    color:
+        #071008;
 
-        .tab-btn {
+    border-color:
+        var(--gold-light);
 
-            background:
+    box-shadow:
+        0 0 22px
+        rgba(212,175,85,.7);
 
-                linear-gradient(
-                    180deg,
-                    #183a22,
-                    #07160c
-                );
+    transform:
+        translateY(-2px);
+}
 
-            color:
-                var(--gold);
+/* =========================
+   GRID
+========================= */
 
-            border:
-                2px solid
-                var(--border-gold);
+.grid {
 
-            padding:
-                14px 28px;
+    display:
+        grid;
 
-            border-radius:
-                8px;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(290px,1fr)
+        );
 
-            cursor:
-                pointer;
+    gap:
+        22px;
+}
 
-            font-family:
-                'Cinzel',
-                serif;
+/* =========================
+   CARD
+========================= */
 
-            font-weight:
-                900;
+.card {
 
-            font-size:
-                0.95rem;
+    position:
+        relative;
 
-            text-transform:
-                uppercase;
+    background:
 
-            letter-spacing:
-                1.5px;
+        linear-gradient(
+            145deg,
+            rgba(20,55,30,.98),
+            rgba(4,17,9,.99)
+        );
 
-            transition:
-                0.25s;
+    border:
+        2px solid
+        var(--border);
 
-            box-shadow:
-                0 5px 15px
-                rgba(0,0,0,0.7);
-        }
+    padding:
+        23px;
 
+    border-radius:
+        11px;
 
-        .tab-btn:hover,
-        .tab-btn.active {
+    box-shadow:
 
-            background:
+        0 12px 28px
+        rgba(0,0,0,.8),
 
-                linear-gradient(
-                    180deg,
-                    #d8b966,
-                    #8b6924
-                );
+        inset 0 0 25px
+        rgba(0,0,0,.55);
+}
 
-            color:
-                #0a0e08;
+.card::before {
 
-            border-color:
-                #ffe9a0;
+    content:
+        "⚜";
 
-            box-shadow:
-                0 0 20px
-                rgba(214,180,92,0.55);
+    position:
+        absolute;
 
-            transform:
-                translateY(-2px);
-        }
+    top:
+        7px;
 
+    right:
+        13px;
 
-        /* ==========================================
-           GRID
-        ========================================== */
+    color:
+        var(--gold);
 
-        .grid {
+    opacity:
+        .45;
 
-            display:
-                grid;
+    font-size:
+        1.2rem;
+}
 
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(290px, 1fr)
-                );
+.card h2,
+.card h3 {
 
-            gap:
-                22px;
-        }
+    font-family:
+        'Cinzel',
+        serif;
 
+    color:
+        var(--gold-light);
 
-        /* ==========================================
-           CARDS
-        ========================================== */
+    border-bottom:
+        2px solid
+        var(--border);
 
-        .card {
+    padding-bottom:
+        8px;
 
-            position:
-                relative;
+    margin-bottom:
+        14px;
 
-            background:
+    font-size:
+        1.3rem;
 
-                linear-gradient(
-                    145deg,
-                    rgba(20,45,28,0.98),
-                    rgba(8,22,13,0.98)
-                );
+    text-shadow:
+        0 2px 5px #000;
+}
 
-            border:
-                2px solid
-                var(--border-gold);
+.card p,
+.card ul {
 
-            border-radius:
-                10px;
+    color:
+        var(--text);
 
-            padding:
-                22px;
+    font-size:
+        1.03rem;
 
-            box-shadow:
+    line-height:
+        1.65;
+}
 
-                0 10px 25px
-                rgba(0,0,0,0.75),
+ul {
 
-                inset 0 0 25px
-                rgba(0,0,0,0.5);
-        }
+    padding-left:
+        20px;
+}
 
+li {
 
-        .card::before {
+    margin-bottom:
+        10px;
 
-            content:
-                "⚜";
+    color:
+        var(--muted);
+}
 
-            position:
-                absolute;
+li strong {
 
-            right:
-                13px;
+    color:
+        var(--gold);
+}
 
-            top:
-                7px;
+/* =========================
+   STATUS
+========================= */
 
-            color:
-                var(--gold);
+.stats-box {
 
-            opacity:
-                0.45;
+    display:
+        flex;
 
-            font-size:
-                1.2rem;
-        }
+    justify-content:
+        space-around;
 
+    background:
+        rgba(0,0,0,.6);
 
-        .card h2,
-        .card h3 {
+    padding:
+        16px;
 
-            font-family:
-                'Cinzel',
-                serif;
+    border-radius:
+        8px;
 
-            color:
-                var(--gold-bright);
+    margin:
+        15px 0;
 
-            border-bottom:
-                2px solid
-                var(--border-gold);
+    border:
+        1px solid
+        var(--border);
 
-            padding-bottom:
-                8px;
+    box-shadow:
+        inset 0 0 12px #000;
+}
 
-            margin-bottom:
-                14px;
+.stat-item {
 
-            font-size:
-                1.3rem;
+    text-align:
+        center;
+}
 
-            text-shadow:
-                0 2px 5px #000;
-        }
+.stat-val {
 
+    font-family:
+        'Cinzel',
+        serif;
 
-        .card p,
-        .card ul {
+    font-size:
+        1.5rem;
 
-            color:
-                var(--text-light);
+    color:
+        var(--gold-light);
 
-            font-size:
-                1.05rem;
+    font-weight:
+        900;
+}
 
-            line-height:
-                1.6;
-        }
+.stat-lbl {
 
+    font-size:
+        .75rem;
 
-        ul {
-            padding-left: 20px;
-        }
+    color:
+        var(--gold);
 
+    text-transform:
+        uppercase;
 
-        li {
-            margin-bottom: 10px;
-            color: var(--text-muted);
-        }
+    font-family:
+        'Cinzel',
+        serif;
 
+    margin-top:
+        4px;
+}
 
-        li strong {
-            color: var(--gold);
-        }
+/* =========================
+   XP
+========================= */
 
+.bar-bg {
 
-        /* ==========================================
-           STATUS
-        ========================================== */
+    background:
+        #000;
 
-        .stats-box {
+    height:
+        19px;
 
-            display:
-                flex;
+    border-radius:
+        10px;
 
-            justify-content:
-                space-around;
+    border:
+        1px solid
+        var(--border);
 
-            background:
-                rgba(0,0,0,0.55);
+    overflow:
+        hidden;
 
-            padding:
-                15px;
+    margin-top:
+        8px;
 
-            border-radius:
-                8px;
+    box-shadow:
+        inset 0 0 8px #000;
+}
 
-            margin:
-                15px 0;
+.bar-fill {
 
-            border:
-                1px solid
-                var(--border-gold);
+    background:
 
-            box-shadow:
-                inset 0 0 12px #000;
-        }
+        linear-gradient(
+            90deg,
+            #76591a,
+            #d4af55,
+            #fff0a8
+        );
 
+    height:
+        100%;
 
-        .stat-item {
-            text-align: center;
-        }
+    width:
+        0%;
 
+    transition:
+        width .4s ease;
 
-        .stat-val {
+    box-shadow:
+        0 0 12px
+        var(--gold);
+}
 
-            font-family:
-                'Cinzel',
-                serif;
+/* =========================
+   BOTÕES
+========================= */
 
-            font-size:
-                1.5rem;
+.btn {
 
-            color:
-                var(--gold-bright);
+    background:
 
-            font-weight:
-                900;
-        }
+        linear-gradient(
+            180deg,
+            #2e6539,
+            #081c0e
+        );
 
+    color:
+        var(--gold-light);
 
-        .stat-lbl {
+    border:
+        2px solid
+        var(--border);
 
-            font-family:
-                'Cinzel',
-                serif;
+    padding:
+        14px;
 
-            color:
-                var(--gold);
+    width:
+        100%;
 
-            font-size:
-                0.75rem;
+    border-radius:
+        7px;
 
-            margin-top:
-                4px;
+    cursor:
+        pointer;
 
-            text-transform:
-                uppercase;
-        }
+    font-family:
+        'Cinzel',
+        serif;
 
+    font-weight:
+        bold;
 
-        /* ==========================================
-           XP
-        ========================================== */
+    font-size:
+        .95rem;
 
-        .bar-bg {
+    text-transform:
+        uppercase;
 
-            height:
-                18px;
+    margin-top:
+        10px;
 
-            background:
-                #020603;
+    transition:
+        .25s;
 
-            border:
-                1px solid
-                var(--border-gold);
+    box-shadow:
+        0 4px 10px
+        rgba(0,0,0,.5);
 
-            border-radius:
-                10px;
+    letter-spacing:
+        1px;
+}
 
-            overflow:
-                hidden;
+.btn:hover {
 
-            margin-top:
-                8px;
+    background:
 
-            box-shadow:
-                inset 0 0 8px #000;
-        }
+        linear-gradient(
+            180deg,
+            #4c874b,
+            #173b20
+        );
 
+    border-color:
+        var(--gold-light);
 
-        .bar-fill {
+    box-shadow:
+        0 0 15px
+        rgba(245,215,127,.6);
 
-            height:
-                100%;
+    color:
+        #fff;
 
-            width:
-                0%;
+    transform:
+        translateY(-2px);
+}
 
-            background:
+.btn:disabled {
 
-                linear-gradient(
-                    90deg,
-                    #79601e,
-                    #d6b45c,
-                    #fff0a8
-                );
+    opacity:
+        .35;
 
-            box-shadow:
-                0 0 15px
-                var(--gold);
+    cursor:
+        not-allowed;
 
-            transition:
-                width 0.4s ease;
-        }
+    transform:
+        none;
 
+    box-shadow:
+        none;
+}
 
-        /* ==========================================
-           BOTÕES
-        ========================================== */
+/* =========================
+   DIÁRIO
+========================= */
 
-        .btn {
+.log {
 
-            width:
-                100%;
+    background:
+        #050a06;
 
-            padding:
-                14px;
+    border:
+        2px solid
+        var(--border);
 
-            margin-top:
-                10px;
+    height:
+        165px;
 
-            border-radius:
-                6px;
+    overflow-y:
+        auto;
 
-            border:
-                2px solid
-                var(--border-gold);
+    padding:
+        12px;
 
-            background:
+    font-size:
+        .95rem;
 
-                linear-gradient(
-                    180deg,
-                    #315f39,
-                    #0b2414
-                );
+    color:
+        var(--muted);
 
-            color:
-                var(--gold-bright);
+    border-radius:
+        7px;
 
-            font-family:
-                'Cinzel',
-                serif;
+    box-shadow:
+        inset 0 0 15px #000;
+}
 
-            font-weight:
-                900;
+.log-entry {
 
-            font-size:
-                0.9rem;
+    margin-bottom:
+        7px;
 
-            text-transform:
-                uppercase;
+    border-bottom:
+        1px solid
+        rgba(197,160,89,.12);
 
-            letter-spacing:
-                1px;
+    padding-bottom:
+        4px;
+}
 
-            cursor:
-                pointer;
+.log-entry.gold {
 
-            transition:
-                0.25s;
+    color:
+        var(--gold-light);
 
-            box-shadow:
-                0 5px 12px
-                rgba(0,0,0,0.6);
-        }
+    font-weight:
+        bold;
+}
 
+.log-entry.magic {
 
-        .btn:hover {
+    color:
+        #c995e7;
 
-            background:
+    font-weight:
+        bold;
+}
 
-                linear-gradient(
-                    180deg,
-                    #4b793e,
-                    #17391f
-                );
+/* =========================
+   FOOTER
+========================= */
 
-            border-color:
-                var(--gold-bright);
+footer {
 
-            box-shadow:
-                0 0 16px
-                rgba(214,180,92,0.5);
+    text-align:
+        center;
 
-            transform:
-                translateY(-2px);
-        }
+    margin-top:
+        30px;
 
+    padding:
+        20px;
 
-        .btn:disabled {
+    color:
+        var(--muted);
 
-            opacity:
-                0.35;
+    border-top:
+        1px solid
+        rgba(212,175,85,.3);
 
-            cursor:
-                not-allowed;
+    font-family:
+        'Cinzel',
+        serif;
 
-            transform:
-                none;
+    font-size:
+        .8rem;
+}
 
-            box-shadow:
-                none;
-        }
+footer strong {
 
+    color:
+        var(--gold);
+}
 
-        /* ==========================================
-           DIÁRIO
-        ========================================== */
+/* =========================
+   CELULAR
+========================= */
 
-        .log {
+@media (max-width: 650px) {
 
-            height:
-                160px;
+    body {
+        padding:
+            10px 6px;
+    }
 
-            overflow-y:
-                auto;
+    header {
+        padding:
+            28px 10px 35px;
+    }
 
-            padding:
-                12px;
+    .magic-title {
 
-            background:
-                #040a06;
+        font-size:
+            2.7rem;
 
-            border:
-                2px solid
-                var(--border-gold);
+        letter-spacing:
+            2px;
+    }
 
-            border-radius:
-                6px;
+    header h1 {
 
-            color:
-                var(--text-muted);
+        font-size:
+            1.7rem;
+    }
 
-            box-shadow:
-                inset 0 0 15px #000;
-        }
+    header p {
 
+        font-size:
+            .8rem;
+    }
 
-        .log-entry {
+    .tab-btn {
 
-            margin-bottom:
-                6px;
+        width:
+            100%;
+    }
 
-            padding-bottom:
-                4px;
+    .royal-card img {
 
-            border-bottom:
-                1px solid
-                rgba(184,148,78,0.12);
-        }
+        height:
+            250px;
+    }
 
+    .stats-box {
 
-        .log-entry.gold {
+        gap:
+            8px;
+    }
 
-            color:
-                var(--gold-bright);
+    .stat-val {
 
-            font-weight:
-                bold;
-        }
+        font-size:
+            1.15rem;
+    }
+}
 
-
-        .log-entry.magic {
-
-            color:
-                #bd8de2;
-
-            font-weight:
-                bold;
-        }
-
-
-        /* ==========================================
-           MOBILE
-        ========================================== */
-
-        @media (max-width: 650px) {
-
-            body {
-                padding: 10px 6px;
-            }
-
-
-            header {
-                padding: 28px 12px;
-            }
-
-
-            .magic-gravity-brand {
-
-                font-size:
-                    1.9rem;
-
-                letter-spacing:
-                    4px;
-            }
-
-
-            header h1 {
-
-                font-size:
-                    2rem;
-            }
-
-
-            header p {
-
-                font-size:
-                    0.85rem;
-            }
-
-
-            .royal-card img {
-
-                height:
-                    240px;
-            }
-
-
-            .tab-btn {
-
-                width:
-                    100%;
-            }
-
-
-            .stats-box {
-
-                gap:
-                    8px;
-            }
-
-
-            .stat-val {
-
-                font-size:
-                    1.15rem;
-            }
-        }
-
-    </style>
+</style>
 </head>
-
 
 <body>
 
-
 <div class="container">
 
+<!-- ========================================
+     CABEÇALHO
+========================================= -->
 
-    <!-- ========================================
-         CABEÇALHO
-    ======================================== -->
+<header>
 
-    <header>
-
-        <div class="magic-gravity-brand">
-            ✨ MAGIC GRAVITY ✨
-        </div>
-
-        <h1>
-            Rocha Chueiri
-        </h1>
-
-        <p>
-            Escola Mágica Ancestral & Trono Imperial
-            das Montanhas Nebulosas
-        </p>
-
-    </header>
-
-
-    <!-- ========================================
-         REALEZA
-    ======================================== -->
-
-    <div class="royalty-banner">
-
-
-        <!-- REI -->
-
-        <div class="royal-card">
-
-            <img
-                src="https://images.treccani.it/ext-tool/extra/images/6/69/690e69837d06cfe83936140758304df5.jpg"
-                alt="Rei medieval"
-            >
-
-            <h4>
-                Rei Valerius I
-            </h4>
-
-            <span>
-                Protetor do Trono e das Montanhas
-            </span>
-
-        </div>
-
-
-        <!-- RAINHA -->
-
-        <div class="royal-card">
-
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Elizabeth_I_in_coronation_robes.jpg/640px-Elizabeth_I_in_coronation_robes.jpg"
-                alt="Rainha Elizabeth I em trajes de coroação"
-            >
-
-            <h4>
-                Rainha Morgana
-            </h4>
-
-            <span>
-                Guardiã Arcana da Rocha Chueiri
-            </span>
-
-        </div>
-
-
-        <!-- ARQUIMAGO -->
-
-        <div class="royal-card">
-
-            <img
-                src="https://epic-user-img.s3.us-east-1.amazonaws.com/u8qolrgtkwic5ok1e4pztsx3ni0roa7szc2uxvha4.png?c=45"
-                alt="Arquimago em biblioteca mágica"
-            >
-
-            <h4>
-                Arquimago Eltor
-            </h4>
-
-            <span>
-                Mestre do Torneio Império
-            </span>
-
-        </div>
-
+    <div class="magic-title">
+        MAGIC GRAVITY
     </div>
-
-
-    <!-- ========================================
-         NAVEGAÇÃO
-    ======================================== -->
-
-    <div class="nav-tabs">
-
-        <button
-            class="tab-btn active"
-            onclick="switchTab('presentation')"
-        >
-            📜 O Reino & A Lenda
-        </button>
-
-
-        <button
-            class="tab-btn"
-            onclick="switchTab('game')"
-        >
-            ⚔️ Simulador de Batalha & Evolução
-        </button>
-
-    </div>
-
-
-    <!-- ========================================
-         APRESENTAÇÃO
-    ======================================== -->
-
-    <div id="tab-presentation">
-
-        <div class="grid">
-
-
-            <div class="card">
-
-                <h2>
-                    👑 O Domínio Mágico
-                </h2>
-
-                <p>
-
-                    Nas profundezas e picos cobertos
-                    pelas brumas das
-                    <strong>Montanhas Nebulosas</strong>,
-                    ergue-se o imponente castelo da
-                    <strong>Rocha Chueiri</strong>
-                    sob a chancela da ordem
-                    <strong>Magic Gravity</strong>.
-
-                    Sob o olhar atento do Rei Valerius I
-                    e da Rainha Morgana, jovens nobres
-                    e bruxos aprendem o verdadeiro poder
-                    do metal, do fogo e da gravidade arcana.
-
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h2>
-                    🏆 O Torneio da Coroa
-                </h2>
-
-                <p>
-
-                    Organizado anualmente pelo
-                    <strong>Arquimago Eltor</strong>
-                    sob decreto do Rei Valerius I,
-                    o torneio imperial exige perícia
-                    em feitiços e combate direto.
-
-                    Apenas a turma ou família mais forte
-                    conquistará o Cetro de Ouro Puríssimo.
-
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h2>
-                    💰 A Sede de Ouro e Poder
-                </h2>
-
-                <ul>
-
-                    <li>
-
-                        <strong>
-                            Estudo Imperial (Passivo):
-                        </strong>
-
-                        O conhecimento ancestral da
-                        biblioteca real concede experiência
-                        contínua (+XP/s).
-
-                    </li>
-
-
-                    <li>
-
-                        <strong>
-                            Caça de Criaturas (Ativo):
-                        </strong>
-
-                        Enfrente feras lendárias nos
-                        picos gelados para saquear tesouros,
-                        acumular moedas de ouro e obter glória.
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="card">
-
-                <h2>
-                    🐉 Guardiões Lendários
-                </h2>
-
-                <p>
-
-                    Além dos segredos nos tomos reais,
-                    o reino abriga ferozes
-                    <strong>
-                        Grifos e Dragões Ancestrais
-                    </strong>.
-
-                    Somente os aprendizes que provarem
-                    seu valor com riqueza e sabedoria
-                    conseguirão firmar um pacto místico
-                    com essas criaturas.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ========================================
-         JOGO
-    ======================================== -->
 
     <div
-        id="tab-game"
-        style="display:none;"
+        style="
+        color:#d4af55;
+        font-size:1.2rem;
+        letter-spacing:5px;
+        margin-bottom:15px;
+        "
     >
+        ⚜ ━━━━━━━ ⚔ ━━━━━━━ ⚜
+    </div>
 
-        <div class="grid">
+    <h1>
+        ROCHA CHUEIRI
+    </h1>
 
+    <p>
+        Escola Mágica Ancestral &
+        Trono Imperial das Montanhas Nebulosas
+    </p>
 
-            <!-- STATUS -->
-
-            <div class="card">
-
-                <h3>
-                    👑 Status do Cavaleiro Arcano
-                </h3>
-
-
-                <div class="stats-box">
-
-
-                    <div class="stat-item">
-
-                        <div
-                            class="stat-val"
-                            id="player-lvl"
-                        >
-                            1
-                        </div>
-
-                        <div class="stat-lbl">
-                            Nível
-                        </div>
-
-                    </div>
+</header>
 
 
-                    <div class="stat-item">
+<!-- ========================================
+     REALEZA
+========================================= -->
 
-                        <div
-                            class="stat-val"
-                            id="player-gold"
-                        >
-                            0
-                        </div>
+<div class="royalty-banner">
 
-                        <div class="stat-lbl">
-                            Ouro (G)
-                        </div>
+    <!-- REI -->
 
-                    </div>
+    <div class="royal-card">
 
-
-                    <div class="stat-item">
-
-                        <div
-                            class="stat-val"
-                            id="player-pet"
-                        >
-                            Nenhum
-                        </div>
-
-                        <div class="stat-lbl">
-                            Mascote
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <span
-                        style="
-                            font-size:0.85rem;
-                            color:var(--gold);
-                            font-family:'Cinzel',serif;
-                        "
-                    >
-                        Evolução Arcana (XP)
-                    </span>
-
-
-                    <div class="bar-bg">
-
-                        <div
-                            class="bar-fill"
-                            id="xp-bar"
-                        ></div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- SABEDORIA -->
-
-            <div class="card">
-
-                <h3>
-                    📜 Sabedoria Contínua do Reino
-                </h3>
-
-
-                <p
-                    style="
-                        font-size:0.95rem;
-                        color:var(--text-muted);
-                    "
-                >
-
-                    Mesmo distante das batalhas,
-                    o treino contínuo na biblioteca
-                    do castelo expande seu conhecimento
-                    constantemente.
-
-                </p>
-
-
-                <div
-                    style="
-                        text-align:center;
-                        font-size:1.5rem;
-                        color:var(--gold-bright);
-                        margin-top:15px;
-                        font-family:'Cinzel',serif;
-                        text-shadow:0 0 10px var(--gold-dark);
-                    "
-                >
-
-                    +
-
-                    <span id="passive-rate">
-                        1
-                    </span>
-
-                    XP / seg
-
-                </div>
-
-            </div>
-
-
-            <!-- CAÇA -->
-
-            <div class="card">
-
-                <h3>
-                    ⚔️ Caça & Pacto com Feras
-                </h3>
-
-
-                <button
-                    class="btn"
-                    onclick="hunt()"
-                >
-                    ⚔️ Caçar Monstros no Pico
-                </button>
-
-
-                <button
-                    class="btn"
-                    id="btn-griffon"
-                    onclick="adopt(
-                        'Grifo Imperial',
-                        50,
-                        3
-                    )"
-                >
-                    🦅 Domar Grifo Imperial
-                    (50 Ouro)
-                </button>
-
-
-                <button
-                    class="btn"
-                    id="btn-dragon"
-                    onclick="adopt(
-                        'Dragão de Ouro',
-                        200,
-                        8
-                    )"
-                >
-                    🐉 Domar Dragão de Ouro
-                    (200 Ouro)
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- CRÔNICAS -->
-
-        <div
-            class="card"
-            style="margin-top:22px;"
+        <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=90"
+            alt="Rei Valerius I"
         >
 
-            <h3>
-                📜 Pergaminho das Crônicas Reais
-            </h3>
+        <h4>
+            Rei Valerius I
+        </h4>
+
+        <span>
+            Protetor do Trono e das Montanhas
+        </span>
+
+    </div>
 
 
-            <div
-                class="log"
-                id="game-log"
-            >
+    <!-- RAINHA -->
 
-                <div class="log-entry">
+    <div class="royal-card">
 
-                    [Início]
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Elizabeth_I_in_coronation_robes.jpg/640px-Elizabeth_I_in_coronation_robes.jpg"
+            alt="Rainha Morgana"
+        >
 
-                    Bem-vindo à Rocha Chueiri de
-                    Magic Gravity!
+        <h4>
+            Rainha Morgana
+        </h4>
 
-                    As bênçãos da Rainha e do Rei
-                    Valerius I acompanham sua jornada...
+        <span>
+            Guardiã Arcana da Rocha Chueiri
+        </span>
 
-                </div>
+    </div>
 
-            </div>
 
-        </div>
+    <!-- ARQUIMAGO -->
+
+    <div class="royal-card">
+
+        <img
+            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=90"
+            alt="Arquimago Eltor"
+        >
+
+        <h4>
+            Arquimago Eltor
+        </h4>
+
+        <span>
+            Mestre do Torneio Imperial
+        </span>
 
     </div>
 
 </div>
 
 
+<!-- ========================================
+     NAVEGAÇÃO
+========================================= -->
+
+<div class="nav-tabs">
+
+    <button
+        class="tab-btn active"
+        onclick="switchTab('presentation')"
+    >
+        📜 O Reino & A Lenda
+    </button>
+
+    <button
+        class="tab-btn"
+        onclick="switchTab('game')"
+    >
+        ⚔️ Simulador de Batalha
+    </button>
+
+</div>
+
+
+<!-- ========================================
+     REINO
+========================================= -->
+
+<div id="tab-presentation">
+
+<div class="grid">
+
+
+<div class="card">
+
+<h2>
+👑 O Domínio Mágico
+</h2>
+
+<p>
+
+Nas profundezas e picos cobertos pelas
+brumas das <strong>Montanhas Nebulosas</strong>,
+ergue-se o imponente castelo da
+<strong>Rocha Chueiri</strong>, sede da lendária
+ordem <strong>Magic Gravity</strong>.
+
+Sob o olhar atento do Rei Valerius I
+e da Rainha Morgana, jovens nobres e
+bruxos aprendem o verdadeiro poder
+do metal, do fogo e da gravidade arcana.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🏆 O Torneio da Coroa
+</h2>
+
+<p>
+
+Organizado anualmente pelo
+<strong>Arquimago Eltor</strong>, sob decreto
+do Rei Valerius I, o torneio imperial
+exige perícia em feitiços e combate direto.
+
+Aqueles que provarem seu valor poderão
+conquistar o lendário
+<strong>Cetro de Ouro Puríssimo</strong>.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+💰 A Sede de Ouro e Poder
+</h2>
+
+<ul>
+
+<li>
+
+<strong>Estudo Imperial:</strong>
+
+A biblioteca real concede experiência
+continuamente.
+
+</li>
+
+<li>
+
+<strong>Caça de Criaturas:</strong>
+
+Enfrente feras lendárias, saqueie
+tesouros e acumule moedas de ouro.
+
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🐉 Guardiões Lendários
+</h2>
+
+<p>
+
+O reino abriga ferozes
+<strong>Grifos Imperiais</strong> e
+<strong>Dragões Ancestrais</strong>.
+
+Somente os aprendizes que provarem
+seu valor conseguirão estabelecer
+um pacto mágico com essas criaturas.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+🏰 A Academia
+</h2>
+
+<p>
+
+A Academia Rocha Chueiri possui
+salões ancestrais, torres encantadas,
+bibliotecas proibidas e arenas onde
+os aprendizes treinam seus poderes.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+⚜ O Código da Rocha
+</h2>
+
+<p>
+
+<strong>Honra.</strong>
+
+<strong>Conhecimento.</strong>
+
+<strong>Coragem.</strong>
+
+<strong>Poder.</strong>
+
+<br><br>
+
+Esses são os quatro pilares dos
+aprendizes de Magic Gravity.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================================
+     JOGO
+========================================= -->
+
+<div
+    id="tab-game"
+    style="display:none;"
+>
+
+<div class="grid">
+
+
+<!-- STATUS -->
+
+<div class="card">
+
+<h3>
+👑 Status do Cavaleiro Arcano
+</h3>
+
+<div class="stats-box">
+
+
+<div class="stat-item">
+
+<div
+    class="stat-val"
+    id="player-lvl"
+>
+1
+</div>
+
+<div class="stat-lbl">
+Nível
+</div>
+
+</div>
+
+
+<div class="stat-item">
+
+<div
+    class="stat-val"
+    id="player-gold"
+>
+0
+</div>
+
+<div class="stat-lbl">
+Ouro
+</div>
+
+</div>
+
+
+<div class="stat-item">
+
+<div
+    class="stat-val"
+    id="player-pet"
+>
+Nenhum
+</div>
+
+<div class="stat-lbl">
+Mascote
+</div>
+
+</div>
+
+
+</div>
+
+
+<span
+style="
+font-size:.85rem;
+color:var(--gold);
+font-family:'Cinzel',serif;
+"
+>
+Evolução Arcana — XP
+</span>
+
+
+<div class="bar-bg">
+
+<div
+    class="bar-fill"
+    id="xp-bar"
+></div>
+
+</div>
+
+</div>
+
+
+<!-- XP -->
+
+<div class="card">
+
+<h3>
+📜 Sabedoria Contínua
+</h3>
+
+<p
+style="
+font-size:.95rem;
+color:var(--muted);
+"
+>
+
+Mesmo distante das batalhas,
+seu treinamento na biblioteca
+ancestral continua aumentando
+seu conhecimento.
+
+</p>
+
+
+<div
+style="
+text-align:center;
+font-size:1.5rem;
+color:var(--gold-light);
+margin-top:15px;
+font-family:'Cinzel',serif;
+"
+>
+
++
+
+<span id="passive-rate">
+1
+</span>
+
+XP / seg
+
+</div>
+
+</div>
+
+
+<!-- CAÇA -->
+
+<div class="card">
+
+<h3>
+⚔️ Caça & Pacto com Feras
+</h3>
+
+
+<button
+class="btn"
+onclick="hunt()"
+>
+⚔️ Caçar Monstros no Pico
+</button>
+
+
+<button
+class="btn"
+id="btn-griffon"
+onclick="adopt('Grifo Imperial',50,3)"
+>
+🦅 Domar Grifo Imperial
+<br>
+50 Ouro
+</button>
+
+
+<button
+class="btn"
+id="btn-dragon"
+onclick="adopt('Dragão de Ouro',200,8)"
+>
+🐉 Domar Dragão de Ouro
+<br>
+200 Ouro
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- CRÔNICAS -->
+
+<div
+class="card"
+style="margin-top:22px;"
+>
+
+<h3>
+📜 Pergaminho das Crônicas Reais
+</h3>
+
+<div
+class="log"
+id="game-log"
+>
+
+<div class="log-entry">
+
+[Início]
+
+Bem-vindo à Rocha Chueiri de
+<strong>Magic Gravity</strong>!
+
+As bênçãos da Rainha Morgana
+e do Rei Valerius I acompanham
+sua jornada.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================================
+     RODAPÉ
+========================================= -->
+
+<footer>
+
+⚜
+
+<strong>
+MAGIC GRAVITY
+</strong>
+
+⚜
+
+<br><br>
+
+Rocha Chueiri —
+Reino das Montanhas Nebulosas
+
+</footer>
+
+</div>
+
+
+<!-- ========================================
+     JAVASCRIPT
+========================================= -->
+
 <script>
 
+/* ==========================
+   JOGADOR
+========================== */
 
-    /* ========================================
-       JOGADOR
-    ======================================== */
+let player = {
 
-    let player = {
+    lvl: 1,
 
-        lvl: 1,
+    xp: 0,
 
-        xp: 0,
+    nextXp: 50,
 
-        nextXp: 50,
+    gold: 0,
 
-        gold: 0,
+    pet: "Nenhum",
 
-        pet: 'Nenhum',
+    rate: 1
 
-        rate: 1
-
-    };
+};
 
 
-    /* ========================================
-       ABAS
-    ======================================== */
+/* ==========================
+   TROCAR ABA
+========================== */
 
-    function switchTab(tab) {
+function switchTab(tab) {
 
+    const presentation =
         document.getElementById(
-            'tab-presentation'
-        ).style.display =
-            tab === 'presentation'
-                ? 'block'
-                : 'none';
+            "tab-presentation"
+        );
 
-
+    const game =
         document.getElementById(
-            'tab-game'
-        ).style.display =
-            tab === 'game'
-                ? 'block'
-                : 'none';
+            "tab-game"
+        );
+
+    presentation.style.display =
+        tab === "presentation"
+        ? "block"
+        : "none";
+
+    game.style.display =
+        tab === "game"
+        ? "block"
+        : "none";
 
 
-        const buttons =
-            document.querySelectorAll(
-                '.tab-btn'
-            );
-
-
-        buttons[0].classList.toggle(
-            'active',
-            tab === 'presentation'
+    const buttons =
+        document.querySelectorAll(
+            ".tab-btn"
         );
 
 
-        buttons[1].classList.toggle(
-            'active',
-            tab === 'game'
-        );
+    buttons[0].classList.toggle(
+        "active",
+        tab === "presentation"
+    );
 
-    }
+    buttons[1].classList.toggle(
+        "active",
+        tab === "game"
+    );
 
-
-    /* ========================================
-       LOG
-    ======================================== */
-
-    function addLog(
-        message,
-        type = ''
-    ) {
-
-        const log =
-            document.getElementById(
-                'game-log'
-            );
+}
 
 
-        const entry =
-            document.createElement(
-                'div'
-            );
+/* ==========================
+   DIÁRIO
+========================== */
 
+function addLog(
+    message,
+    type = ""
+) {
 
-        entry.className =
-            `log-entry ${type}`;
-
-
-        entry.textContent =
-            `> ${message}`;
-
-
-        log.appendChild(
-            entry
+    const log =
+        document.getElementById(
+            "game-log"
         );
 
 
-        log.scrollTop =
-            log.scrollHeight;
-    }
-
-
-    /* ========================================
-       XP
-    ======================================== */
-
-    function gainXP(amount) {
-
-        player.xp += amount;
-
-
-        while (
-            player.xp >= player.nextXp
-        ) {
-
-            player.xp -=
-                player.nextXp;
-
-
-            player.lvl++;
-
-
-            player.nextXp =
-                Math.floor(
-                    player.nextXp * 1.5
-                );
-
-
-            addLog(
-                `👑 Decretado pelo Rei Valerius I! Você ascendeu ao Nível ${player.lvl}!`,
-                'gold'
-            );
-
-        }
-
-
-        updateUI();
-    }
-
-
-    /* ========================================
-       CAÇA
-    ======================================== */
-
-    function hunt() {
-
-        const monsters = [
-
-            {
-                name:
-                    'Gárgula dos Portões',
-
-                xp:
-                    15,
-
-                gold:
-                    12
-            },
-
-
-            {
-                name:
-                    'Lobo das Neves com Armadura',
-
-                xp:
-                    25,
-
-                gold:
-                    20
-            },
-
-
-            {
-                name:
-                    'Sombra do Dragão Antigo',
-
-                xp:
-                    50,
-
-                gold:
-                    40
-            }
-
-        ];
-
-
-        const monster =
-            monsters[
-                Math.floor(
-                    Math.random() *
-                    monsters.length
-                )
-            ];
-
-
-        player.gold +=
-            monster.gold;
-
-
-        addLog(
-            `Vitória! Derrotou o ${monster.name}! Ganhou +${monster.xp} XP e saqueou +${monster.gold} Moedas de Ouro.`
+    const entry =
+        document.createElement(
+            "div"
         );
 
 
-        gainXP(
-            monster.xp
-        );
-
-    }
+    entry.className =
+        "log-entry " + type;
 
 
-    /* ========================================
-       MASCOTES
-    ======================================== */
-
-    function adopt(
-        petName,
-        cost,
-        newRate
-    ) {
-
-        if (
-            player.gold >= cost &&
-            player.pet !== petName
-        ) {
-
-            player.gold -=
-                cost;
+    entry.textContent =
+        "> " + message;
 
 
-            player.pet =
-                petName;
-
-
-            player.rate =
-                newRate;
-
-
-            addLog(
-                `✨ Pacto Nobre! Você selou um laço sagrado com um ${petName}. Sua taxa de ganho aumentou para +${newRate} XP/s.`,
-                'magic'
-            );
-
-
-            updateUI();
-        }
-
-    }
-
-
-    /* ========================================
-       ATUALIZAÇÃO DA INTERFACE
-    ======================================== */
-
-    function updateUI() {
-
-        document.getElementById(
-            'player-lvl'
-        ).textContent =
-            player.lvl;
-
-
-        document.getElementById(
-            'player-gold'
-        ).textContent =
-            player.gold;
-
-
-        document.getElementById(
-            'player-pet'
-        ).textContent =
-            player.pet;
-
-
-        document.getElementById(
-            'passive-rate'
-        ).textContent =
-            player.rate;
-
-
-        const percentage =
-            (
-                player.xp /
-                player.nextXp
-            ) * 100;
-
-
-        document.getElementById(
-            'xp-bar'
-        ).style.width =
-            `${percentage}%`;
-
-
-        document.getElementById(
-            'btn-griffon'
-        ).disabled =
-            player.gold < 50 ||
-            player.pet ===
-            'Grifo Imperial';
-
-
-        document.getElementById(
-            'btn-dragon'
-        ).disabled =
-            player.gold < 200 ||
-            player.pet ===
-            'Dragão de Ouro';
-
-    }
-
-
-    /* ========================================
-       XP PASSIVO
-    ======================================== */
-
-    setInterval(
-        () => {
-
-            gainXP(
-                player.rate
-            );
-
-        },
-        1000
+    log.appendChild(
+        entry
     );
 
 
-    /* ========================================
-       INICIALIZAÇÃO
-    ======================================== */
+    log.scrollTop =
+        log.scrollHeight;
+
+}
+
+
+/* ==========================
+   XP
+========================== */
+
+function gainXP(amount) {
+
+    player.xp += amount;
+
+
+    while (
+        player.xp >=
+        player.nextXp
+    ) {
+
+        player.xp -=
+            player.nextXp;
+
+
+        player.lvl++;
+
+
+        player.nextXp =
+            Math.floor(
+                player.nextXp * 1.5
+            );
+
+
+        addLog(
+
+            "👑 O Rei Valerius I anuncia: você alcançou o Nível " +
+            player.lvl +
+            "!",
+
+            "gold"
+
+        );
+
+    }
+
 
     updateUI();
+
+}
+
+
+/* ==========================
+   CAÇAR MONSTROS
+========================== */
+
+function hunt() {
+
+    const monsters = [
+
+        {
+            name:
+                "Gárgula dos Portões",
+
+            xp: 15,
+
+            gold: 12
+        },
+
+        {
+            name:
+                "Lobo das Neves com Armadura",
+
+            xp: 25,
+
+            gold: 20
+        },
+
+        {
+            name:
+                "Sombra do Dragão Antigo",
+
+            xp: 50,
+
+            gold: 40
+        },
+
+        {
+            name:
+                "Troll das Montanhas",
+
+            xp: 35,
+
+            gold: 30
+        },
+
+        {
+            name:
+                "Cavaleiro Fantasma",
+
+            xp: 60,
+
+            gold: 55
+        }
+
+    ];
+
+
+    const monster =
+        monsters[
+            Math.floor(
+                Math.random() *
+                monsters.length
+            )
+        ];
+
+
+    player.gold +=
+        monster.gold;
+
+
+    addLog(
+
+        "⚔️ Vitória! Você derrotou " +
+        monster.name +
+        " e recebeu +" +
+        monster.xp +
+        " XP e +" +
+        monster.gold +
+        " Ouro."
+
+    );
+
+
+    gainXP(
+        monster.xp
+    );
+
+}
+
+
+/* ==========================
+   DOMAR CRIATURA
+========================== */
+
+function adopt(
+    petName,
+    cost,
+    newRate
+) {
+
+    if (
+        player.gold >= cost &&
+        player.pet !== petName
+    ) {
+
+        player.gold -=
+            cost;
+
+
+        player.pet =
+            petName;
+
+
+        player.rate =
+            newRate;
+
+
+        addLog(
+
+            "✨ Pacto Místico! Você estabeleceu um vínculo com " +
+            petName +
+            ". Agora recebe +" +
+            newRate +
+            " XP por segundo.",
+
+            "magic"
+
+        );
+
+
+        updateUI();
+
+    }
+
+}
+
+
+/* ==========================
+   ATUALIZAR INTERFACE
+========================== */
+
+function updateUI() {
+
+    document.getElementById(
+        "player-lvl"
+    ).textContent =
+        player.lvl;
+
+
+    document.getElementById(
+        "player-gold"
+    ).textContent =
+        player.gold;
+
+
+    document.getElementById(
+        "player-pet"
+    ).textContent =
+        player.pet;
+
+
+    document.getElementById(
+        "passive-rate"
+    ).textContent =
+        player.rate;
+
+
+    const percentage =
+        (
+            player.xp /
+            player.nextXp
+        ) * 100;
+
+
+    document.getElementById(
+        "xp-bar"
+    ).style.width =
+        percentage + "%";
+
+
+    document.getElementById(
+        "btn-griffon"
+    ).disabled =
+
+        player.gold < 50 ||
+        player.pet ===
+        "Grifo Imperial";
+
+
+    document.getElementById(
+        "btn-dragon"
+    ).disabled =
+
+        player.gold < 200 ||
+        player.pet ===
+        "Dragão de Ouro";
+
+}
+
+
+/* ==========================
+   XP PASSIVO
+========================== */
+
+setInterval(
+
+    function() {
+
+        gainXP(
+            player.rate
+        );
+
+    },
+
+    1000
+
+);
+
+
+/* ==========================
+   INICIAR
+========================== */
+
+updateUI();
 
 </script>
 
