@@ -4,220 +4,331 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rocha Chueiri - Escola Mágica Ancestral</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;700;900&family=MedievalSharp&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0b0b10;
-            --panel: #14141e;
-            --border: #2a2a3c;
-            --gold: #d4af37;
-            --gold-light: #f3e5ab;
-            --text: #e2e2e8;
-            --dim: #8a8a9e;
+            --bg-dark: #07060a;
+            --parchment: #181520;
+            --parchment-border: #8c6d37;
+            --gold: #f3c669;
+            --gold-bright: #ffe6a3;
+            --gold-dark: #a87e2a;
+            --crimson: #8a1c1c;
+            --magic-purple: #a855f7;
+            --text-light: #ece6d5;
+            --text-dim: #a69c8a;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cinzel', 'Georgia', serif; }
-        body { background: var(--bg); color: var(--text); padding: 20px; line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        header {
-            text-align: center;
-            padding: 30px 10px;
-            border-bottom: 2px solid var(--gold);
-            margin-bottom: 25px;
-            background: linear-gradient(180deg, #181824 0%, var(--bg) 100%);
-        }
-
-        header h1 {
-            color: var(--gold);
-            font-size: 2.2rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-        }
-
-        header p { color: var(--dim); font-style: italic; margin-top: 5px; }
-
-        .nav-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .tab-btn {
-            background: var(--panel);
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background: var(--gold);
-            color: #000;
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
-        }
-
-        .container { max-width: 900px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-
-        .card {
-            background: var(--panel);
-            border: 1px solid var(--border);
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.12), transparent 70%),
+                radial-gradient(circle at 50% 100%, rgba(140, 109, 55, 0.15), transparent 80%);
+            color: var(--text-light);
+            font-family: 'MedievalSharp', Georgia, serif;
             padding: 20px;
-            border-radius: 8px;
+            min-height: 100vh;
+        }
+
+        /* Moldura Medieval Central */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
             position: relative;
         }
 
-        .card h2, .card h3 {
-            color: var(--gold);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
-            margin-bottom: 12px;
+        header {
+            text-align: center;
+            padding: 35px 20px 25px;
+            margin-bottom: 30px;
+            background: linear-gradient(180deg, rgba(20, 16, 28, 0.9) 0%, rgba(10, 8, 15, 0.95) 100%);
+            border: 2px solid var(--parchment-border);
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.15);
+            position: relative;
         }
 
+        header::before {
+            content: "✦ ⚔ ✦";
+            display: block;
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            letter-spacing: 10px;
+        }
+
+        header h1 {
+            font-family: 'Cinzel Decorative', 'Cinzel', serif;
+            color: var(--gold-bright);
+            font-size: 2.5rem;
+            text-shadow: 0 0 12px rgba(243, 198, 105, 0.4), 2px 2px 4px #000;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            margin-top: 8px;
+            font-size: 1.05rem;
+        }
+
+        /* Navegação Por Abas */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            background: linear-gradient(180deg, #281e12 0%, #120c07 100%);
+            color: var(--gold);
+            border: 2px solid var(--parchment-border);
+            padding: 12px 28px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #0d0a05;
+            border-color: var(--gold-bright);
+            box-shadow: 0 0 18px rgba(243, 198, 105, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Grid e Cartões em Estilo Pergaminho Escuro */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--parchment);
+            border: 2px solid var(--parchment-border);
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            pointer-events: none;
+            border-radius: 6px;
+        }
+
+        .card h2, .card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            border-bottom: 1px solid var(--parchment-border);
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p, .card ul {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; color: var(--text-dim); }
+        li strong { color: var(--gold-bright); }
+
+        /* Stats do RPG */
         .stats-box {
             display: flex;
             justify-content: space-around;
-            background: #08080c;
-            padding: 12px;
-            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 14px;
+            border-radius: 8px;
             margin: 15px 0;
-            border: 1px solid #1f1f2e;
+            border: 1px solid rgba(212, 175, 55, 0.25);
         }
 
-        .stat-val { font-size: 1.3rem; color: var(--gold); font-weight: bold; }
-        .stat-lbl { font-size: 0.75rem; color: var(--dim); text-transform: uppercase; }
+        .stat-item { text-align: center; }
+        .stat-val { font-family: 'Cinzel', serif; font-size: 1.4rem; color: var(--gold-bright); font-weight: bold; }
+        .stat-lbl { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; font-family: 'Cinzel', serif; }
 
-        .bar-bg { background: #000; height: 14px; border-radius: 7px; border: 1px solid var(--gold); overflow: hidden; margin-top: 5px; }
-        .bar-fill { background: linear-gradient(90deg, var(--gold), #ff8c00); height: 100%; width: 0%; transition: width 0.3s; }
+        /* Barra de Experiência Arcana */
+        .bar-bg {
+            background: #050508;
+            height: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--gold-dark);
+            overflow: hidden;
+            margin-top: 8px;
+            box-shadow: inset 0 0 5px #000;
+        }
 
+        .bar-fill {
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-bright), var(--magic-purple));
+            height: 100%;
+            width: 0%;
+            transition: width 0.4s ease-out;
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        /* Botões Feitos à Mão */
         .btn {
-            background: #202030;
-            color: var(--gold);
-            border: 1px solid var(--gold);
+            background: linear-gradient(180deg, #3a1c1c 0%, #1a0a0a 100%);
+            color: var(--gold-bright);
+            border: 1px solid var(--gold-dark);
             padding: 12px;
             width: 100%;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
+            font-family: 'Cinzel', serif;
             font-weight: bold;
+            font-size: 0.9rem;
             text-transform: uppercase;
             margin-top: 10px;
-            transition: 0.2s;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
         }
 
-        .btn:hover { background: var(--gold); color: #000; }
-        .btn:disabled { opacity: 0.3; cursor: not-allowed; border-color: var(--dim); color: var(--dim); }
+        .btn:hover {
+            background: linear-gradient(180deg, var(--crimson) 0%, #3a0000 100%);
+            border-color: var(--gold-bright);
+            box-shadow: 0 0 12px rgba(138, 28, 28, 0.8);
+            color: #fff;
+        }
 
+        .btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            border-color: #4a4035;
+            background: #151218;
+            color: var(--text-dim);
+            box-shadow: none;
+        }
+
+        /* Diário Místico de Bordo */
         .log {
-            background: #06060a;
-            border: 1px solid var(--border);
-            height: 140px;
+            background: #050407;
+            border: 1px solid var(--parchment-border);
+            height: 150px;
             overflow-y: auto;
-            padding: 10px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: var(--dim);
-            border-radius: 4px;
+            padding: 12px;
+            font-family: 'Georgia', serif;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            border-radius: 6px;
+            box-shadow: inset 0 0 10px #000;
         }
 
-        .log-entry { margin-bottom: 4px; }
-        .log-entry.gold { color: var(--gold); }
-        .log-entry.magic { color: #a855f7; }
-
-        ul { padding-left: 20px; color: var(--dim); }
-        li { margin-bottom: 8px; }
+        .log-entry { margin-bottom: 6px; border-bottom: 1px stroke rgba(255,255,255,0.05); padding-bottom: 2px; }
+        .log-entry.gold { color: var(--gold-bright); font-weight: bold; }
+        .log-entry.magic { color: var(--magic-purple); }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Rocha Chueiri</h1>
-        <p>Escola Mágica Ancestral das Montanhas Nebulosas</p>
-    </header>
-
-    <div class="nav-tabs">
-        <button class="tab-btn active" onclick="switchTab('presentation')">📜 Apresentação</button>
-        <button class="tab-btn" onclick="switchTab('game')">🎮 Simulador RPG</button>
-    </div>
-
     <div class="container">
-        <!-- ABA APRESENTAÇÃO -->
+        <header>
+            <h1>Rocha Chueiri</h1>
+            <p>Escola Mágica Ancestral das Montanhas Nebulosas</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('presentation')">📜 Apresentação</button>
+            <button class="tab-btn" onclick="switchTab('game')">🎮 Simulador RPG</button>
+        </div>
+
+        <!-- ABA DE APRESENTAÇÃO DO TEMA -->
         <div id="tab-presentation">
             <div class="grid">
                 <div class="card">
                     <h2>🏰 O Cenário & Lore</h2>
-                    <p>Nas profundezas das <strong>Montanhas Nebulosas</strong>, a lendária academia <strong>Rocha Chueiri</strong> acolhe jovens de diversas raças. Lá, os alunos aprendem o domínio arcano ao lado de feras magníficas como grifos, fênixes e dragões.</p>
+                    <p>Escondida nas profundezas e brumas das <strong>Montanhas Nebulosas</strong>, a academia secular <strong>Rocha Chueiri</strong> acolhe jovens aprendizes de diversas raças em busca de maestria arcana ao lado de criaturas lendárias como grifos, fênixes e dragões.</p>
                 </div>
 
                 <div class="card">
-                    <h2>🏆 O Torneio do Arquimago</h2>
-                    <p>Organizado pelo <strong>Arquimago Professor</strong>, o torneio anual coloca turmas e famílias rivais à prova. As equipes enfrentam desafios de combate e enigmas em busca do troféu e da glória eterna.</p>
+                    <h2>🏆 Torneio do Arquimago</h2>
+                    <p>Anualmente, o <strong>Arquimago Professor</strong> convoca as famílias e turmas da escola para o grande torneio. As equipes rivalizam em desafios mágicos e combates em busca do troféu da academia e do reconhecimento ancestral.</p>
                 </div>
 
                 <div class="card">
-                    <h2>⚡ Sistema de Evolução</h2>
+                    <h2>⚡ Dupla Evolução</h2>
                     <ul>
-                        <li><strong>Estudo Mágico (Passivo):</strong> A teoria é absorvida à distância, como um sussurro contínuo que garante XP constante.</li>
-                        <li><strong>Caça de Monstros (Ativo):</strong> Exige presença e coragem nas montanhas para derrotar criaturas, acelerar o Nível e ganhar Ouro.</li>
+                        <li><strong>Estudo Mágico (Passivo):</strong> A sabedoria arcana é absorvida continuamente mesmo à distância, como um sussurro de sabedoria constante.</li>
+                        <li><strong>Caça de Monstros (Ativo):</strong> Exige presença e coragem nas montanhas para derrotar feras, acumular ouro e evoluir o Nível.</li>
                     </ul>
                 </div>
 
                 <div class="card">
-                    <h2>🗡️ Segredos & Rivalidade</h2>
-                    <p>A competição não revela apenas os alunos mais habilidosos e unidoss, mas também traz à tona <strong>segredos ancestrais ocultos</strong> nos corredores da Rocha Chueiri.</p>
+                    <h2>🗡️ Segredos Ocultos</h2>
+                    <p>Conforme a rivalidade entre os alunos se intensifica na busca pela vitória, mistérios antigos e segredos há muito esquecidos começam a emergir dos corredores de pedra da Rocha Chueiri.</p>
                 </div>
             </div>
         </div>
 
-        <!-- ABA SIMULADOR RPG -->
+        <!-- ABA DO SIMULADOR DE RPG -->
         <div id="tab-game" style="display: none;">
             <div class="grid">
                 <div class="card">
-                    <h3> Status do Aluno</h3>
+                    <h3> Status do Aprendiz</h3>
                     <div class="stats-box">
-                        <div style="text-align:center;">
+                        <div class="stat-item">
                             <div class="stat-val" id="player-lvl">1</div>
                             <div class="stat-lbl">Nível</div>
                         </div>
-                        <div style="text-align:center;">
+                        <div class="stat-item">
                             <div class="stat-val" id="player-gold">0</div>
                             <div class="stat-lbl">Ouro</div>
                         </div>
-                        <div style="text-align:center;">
+                        <div class="stat-item">
                             <div class="stat-val" id="player-pet">Nenhum</div>
                             <div class="stat-lbl">Mascote</div>
                         </div>
                     </div>
                     <div>
-                        <span style="font-size: 0.85rem; color: var(--dim);">Progresso para o próximo Nível (XP)</span>
+                        <span style="font-size: 0.85rem; color: var(--text-dim); font-family:'Cinzel', serif;">Evolução Arcana (XP)</span>
                         <div class="bar-bg"><div class="bar-fill" id="xp-bar"></div></div>
                     </div>
                 </div>
 
                 <div class="card">
                     <h3> Sabedoria Contínua</h3>
-                    <p style="font-size: 0.85rem; color: var(--dim);">O estudo mágico acontece constantemente à distância como um sussurro de sabedoria.</p>
-                    <div style="text-align:center; font-size: 1.3rem; color: var(--gold); margin-top: 15px;">
+                    <p style="font-size: 0.9rem; color: var(--text-dim);">Estude a distância enquanto os sussurros mágicos da biblioteca expandem seu conhecimento continuamente.</p>
+                    <div style="text-align:center; font-size: 1.4rem; color: var(--gold-bright); margin-top: 15px; font-family:'Cinzel', serif;">
                         +<span id="passive-rate">1</span> XP / seg
                     </div>
                 </div>
 
                 <div class="card">
-                    <h3> Caça de Monstros & Mascotes</h3>
+                    <h3> Caça & Vínculos</h3>
                     <button class="btn" onclick="hunt()">⚔️ Caçar nas Montanhas</button>
-                    <button class="btn" id="btn-griffon" onclick="adopt('Grifo', 50, 3)">🦅 Adotar Grifo (50 Ouro)</button>
-                    <button class="btn" id="btn-dragon" onclick="adopt('Dragão', 200, 8)">🐉 Adotar Dragão (200 Ouro)</button>
+                    <button class="btn" id="btn-griffon" onclick="adopt('Grifo', 50, 3)">🦅 Pacto com Grifo (50 Ouro)</button>
+                    <button class="btn" id="btn-dragon" onclick="adopt('Dragão', 200, 8)">🐉 Pacto com Dragão (200 Ouro)</button>
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 20px;">
-                <h3> Diário Místico</h3>
+            <div class="card" style="margin-top: 22px;">
+                <h3> Diário Místico de Bordo</h3>
                 <div class="log" id="game-log">
-                    <div class="log-entry">[Início] Bem-vindo à Rocha Chueiri! Os sussurros arcanos começaram...</div>
+                    <div class="log-entry">[Sussurro] Os portões de Rocha Chueiri se abriram. Seu aprendizado começou...</div>
                 </div>
             </div>
         </div>
@@ -250,7 +361,7 @@
                 player.xp -= player.nextXp;
                 player.lvl++;
                 player.nextXp = Math.floor(player.nextXp * 1.5);
-                addLog(`🌟 Parabéns! Você subiu para o Nível ${player.lvl}!`, 'gold');
+                addLog(`🌟 O Mágico Arquimago reconhece seu poder! Alcançou o Nível ${player.lvl}!`, 'gold');
             }
             updateUI();
         }
@@ -259,11 +370,11 @@
             const monsters = [
                 { name: 'Gárgula de Pedra', xp: 15, gold: 12 },
                 { name: 'Lobo das Nevoadas', xp: 25, gold: 20 },
-                { name: 'Sombra da Caverna', xp: 45, gold: 35 }
+                { name: 'Sombra das Cavernas', xp: 45, gold: 35 }
             ];
             const m = monsters[Math.floor(Math.random() * monsters.length)];
             player.gold += m.gold;
-            addLog(`Caça: Derrotou um ${m.name}! +${m.xP || m.xp} XP e +${m.gold} Ouro.`);
+            addLog(`Caça: Derrotou um ${m.name}! +${m.xp} XP e +${m.gold} Ouro.`);
             gainXP(m.xp);
         }
 
@@ -272,7 +383,7 @@
                 player.gold -= cost;
                 player.pet = petName;
                 player.rate = newRate;
-                addLog(`✨ Pacto selado! Você adquiriu um ${petName}. Ganho de XP passou para +${newRate}/s.`, 'magic');
+                addLog(`✨ Vínculo Mágico! Você se aliou a um ${petName}. Sua taxa de aprendizado aumentou para +${newRate} XP/s.`, 'magic');
                 updateUI();
             }
         }
