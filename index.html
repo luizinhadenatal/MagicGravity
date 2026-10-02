@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocha Chueiri - Reino e Escola Mágica Ancestral</title>
+    <title>Magic Gravity - Rocha Chueiri - Reino e Escola Mágica Ancestral</title>
     <!-- Fontes Medievais -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +28,10 @@
         body {
             background-color: #080503;
             background-image: 
-                radial-gradient(circle at 50% 10%, rgba(139, 0, 0, 0.25), transparent 60%),
+                radial-gradient(circle at 50% 10%, rgba(157, 78, 221, 0.3), transparent 60%),
                 radial-gradient(circle at 50% 90%, rgba(13, 27, 62, 0.35), transparent 70%),
                 radial-gradient(circle at 10% 50%, rgba(184, 134, 11, 0.15), transparent 50%),
-                radial-gradient(circle at 90% 50%, rgba(157, 78, 221, 0.15), transparent 50%);
+                radial-gradient(circle at 90% 50%, rgba(139, 0, 0, 0.25), transparent 50%);
             color: var(--text-light);
             font-family: 'MedievalSharp', Georgia, serif;
             padding: 20px 10px;
@@ -47,14 +47,26 @@
         /* HEADER REAL */
         header {
             text-align: center;
-            padding: 40px 20px 30px;
+            padding: 35px 20px 30px;
             margin-bottom: 25px;
-            background: linear-gradient(180deg, rgba(30, 10, 10, 0.95) 0%, rgba(15, 8, 18, 0.98) 100%);
+            background: linear-gradient(180deg, rgba(25, 10, 30, 0.95) 0%, rgba(15, 8, 18, 0.98) 100%);
             border: 3px solid var(--border-gold);
             border-radius: 12px;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(197, 160, 89, 0.3);
             position: relative;
             overflow: hidden;
+        }
+
+        /* NOMINATA MAGIC GRAVITY ACIMA DO TÍTULO */
+        .magic-gravity-brand {
+            font-family: 'Cinzel Decorative', 'Cinzel', serif;
+            color: #d8b4fe;
+            font-size: 1.4rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            text-shadow: 0 0 12px var(--purple-glow), 0 0 25px var(--purple-glow);
+            margin-bottom: 8px;
+            display: inline-block;
         }
 
         header::before {
@@ -113,7 +125,7 @@
             height: 160px;
             object-fit: cover;
             border-bottom: 2px solid var(--border-gold);
-            filter: sepia(0.2) contrast(1.1);
+            filter: sepia(0.15) contrast(1.15);
         }
 
         .royal-card h4 {
@@ -258,7 +270,7 @@
             font-size: 0.95rem;
             text-transform: uppercase;
             margin-top: 10px;
-            transition: all 0.25 ease;
+            transition: all 0.25s ease;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             letter-spacing: 1px;
         }
@@ -279,7 +291,7 @@
             box-shadow: none;
         }
 
-        /* DIÁRIO MÍSTICO COM SCRULL NOBRE */
+        /* DIÁRIO MÍSTICO COM SCROLL NOBRE */
         .log {
             background: #0a0604;
             border: 2px solid var(--border-gold);
@@ -303,6 +315,7 @@
     <div class="container">
         <!-- CABEÇALHO -->
         <header>
+            <div class="magic-gravity-brand">✨ Magic Gravity ✨</div>
             <h1>Rocha Chueiri</h1>
             <p>Escola Mágica Ancestral & Trono Imperial das Montanhas Nebulosas</p>
         </header>
@@ -310,7 +323,8 @@
         <!-- BANNER COM IMAGENS DE REIS & RAINHAS -->
         <div class="royalty-banner">
             <div class="royal-card">
-                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80" alt="Rei Magnânimo">
+                <!-- Imagem do Rei Valerius I atualizada -->
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Rei Valerius I">
                 <h4>Rei Valerius I</h4>
                 <span>Protetor do Trono e das Montanhas</span>
             </div>
@@ -337,7 +351,7 @@
             <div class="grid">
                 <div class="card">
                     <h2>👑 O Domínio Mágico</h2>
-                    <p>Nas profundezas e picos cobertos pelas brumas das <strong>Montanhas Nebulosas</strong>, ergue-se o imponente castelo da <strong>Rocha Chueiri</strong>. Sob o olhar atento do Rei e da Rainha, jovens nobres e bruxos aprendem o verdadeiro poder do metal, do fogo e da magia arcana.</p>
+                    <p>Nas profundezas e picos cobertos pelas brumas das <strong>Montanhas Nebulosas</strong>, ergue-se o imponente castelo da <strong>Rocha Chueiri</strong> sob a chancela da ordem <strong>Magic Gravity</strong>. Sob o olhar atento do Rei e da Rainha, jovens nobres e bruxos aprendem o verdadeiro poder do metal, do fogo e da gravidade arcana.</p>
                 </div>
 
                 <div class="card">
@@ -402,9 +416,9 @@
             </div>
 
             <div class="card" style="margin-top: 22px;">
-                <h3>📜 Pergaminho das Cronicas Reais</h3>
+                <h3>📜 Pergaminho das Crônicas Reais</h3>
                 <div class="log" id="game-log">
-                    <div class="log-entry">[Início] Bem-vindo à Rocha Chueiri! As bênçãos da Rainha e do Rei acompanham sua jornada...</div>
+                    <div class="log-entry">[Início] Bem-vindo à Rocha Chueiri de Magic Gravity! As bênçãos da Rainha e do Rei Valerius I acompanham sua jornada...</div>
                 </div>
             </div>
         </div>
@@ -438,7 +452,7 @@
                 player.xp -= player.nextXp;
                 player.lvl++;
                 player.nextXp = Math.floor(player.nextXp * 1.5);
-                addLog(`👑 Decretado pelo Rei! Você ascendeu ao Nível ${player.lvl}!`, 'gold');
+                addLog(`👑 Decretado pelo Rei Valerius I! Você ascendeu ao Nível ${player.lvl}!`, 'gold');
             }
             updateUI();
         }
