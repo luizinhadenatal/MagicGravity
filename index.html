@@ -6,26 +6,33 @@
 
     <title>Magic Gravity - Rocha Chueiri - Reino e Escola Mágica Ancestral</title>
 
-    <!-- Fontes Medievais -->
+    <!-- FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
 
     <style>
+
         :root {
             --gold: #f5d77f;
             --gold-bright: #fff0a8;
             --gold-dark: #b8860b;
+
             --royal-red: #8b0000;
             --royal-blue: #0d1b3e;
+
             --purple-glow: #9d4edd;
+
             --parchment: #18120b;
             --parchment-card: #221a12;
+
             --border-gold: #c5a059;
+
             --text-light: #f4eae1;
             --text-muted: #b8aa98;
         }
+
 
         * {
             box-sizing: border-box;
@@ -33,25 +40,31 @@
             padding: 0;
         }
 
+
         body {
+
             background-color: #080503;
 
             background-image:
+
                 radial-gradient(
                     circle at 50% 10%,
                     rgba(157, 78, 221, 0.3),
                     transparent 60%
                 ),
+
                 radial-gradient(
                     circle at 50% 90%,
                     rgba(13, 27, 62, 0.35),
                     transparent 70%
                 ),
+
                 radial-gradient(
                     circle at 10% 50%,
                     rgba(184, 134, 11, 0.15),
                     transparent 50%
                 ),
+
                 radial-gradient(
                     circle at 90% 50%,
                     rgba(139, 0, 0, 0.25),
@@ -59,24 +72,38 @@
                 );
 
             color: var(--text-light);
-            font-family: 'MedievalSharp', Georgia, serif;
+
+            font-family:
+                'MedievalSharp',
+                Georgia,
+                serif;
+
             padding: 20px 10px;
+
             min-height: 100vh;
         }
 
+
         .container {
+
             max-width: 1050px;
+
             margin: 0 auto;
+
             position: relative;
         }
 
-        /* =========================
+
+        /* =================================
            CABEÇALHO
-        ========================= */
+        ================================= */
 
         header {
+
             text-align: center;
+
             padding: 35px 20px 30px;
+
             margin-bottom: 25px;
 
             background:
@@ -87,6 +114,7 @@
                 );
 
             border: 3px solid var(--border-gold);
+
             border-radius: 12px;
 
             box-shadow:
@@ -94,14 +122,24 @@
                 inset 0 0 20px rgba(197, 160, 89, 0.3);
 
             position: relative;
+
             overflow: hidden;
         }
 
+
         .magic-gravity-brand {
-            font-family: 'Cinzel Decorative', 'Cinzel', serif;
+
+            font-family:
+                'Cinzel Decorative',
+                'Cinzel',
+                serif;
+
             color: #d8b4fe;
+
             font-size: 1.5rem;
+
             letter-spacing: 6px;
+
             text-transform: uppercase;
 
             text-shadow:
@@ -109,23 +147,37 @@
                 0 0 25px var(--purple-glow);
 
             margin-bottom: 8px;
+
             display: inline-block;
         }
 
+
         header::before {
+
             content: "👑 ⚜ ⚔ ⚜ 👑";
+
             display: block;
 
             color: var(--gold);
+
             font-size: 1.5rem;
+
             margin-bottom: 10px;
+
             letter-spacing: 12px;
 
-            text-shadow: 0 0 10px var(--gold-dark);
+            text-shadow:
+                0 0 10px var(--gold-dark);
         }
 
+
         header h1 {
-            font-family: 'Cinzel Decorative', 'Cinzel', serif;
+
+            font-family:
+                'Cinzel Decorative',
+                'Cinzel',
+                serif;
+
             color: var(--gold-bright);
 
             font-size: 2.8rem;
@@ -135,35 +187,49 @@
                 3px 3px 6px #000;
 
             letter-spacing: 3px;
+
             line-height: 1.2;
         }
 
+
         header p {
+
             color: var(--gold);
+
             font-family: 'Cinzel', serif;
+
             font-style: italic;
 
             margin-top: 10px;
+
             font-size: 1.15rem;
+
             letter-spacing: 1px;
         }
 
-        /* =========================
+
+        /* =================================
            REALEZA
-        ========================= */
+        ================================= */
 
         .royalty-banner {
+
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(200px, 1fr)
-            );
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(200px, 1fr)
+                );
 
             gap: 15px;
+
             margin-bottom: 25px;
         }
 
+
         .royal-card {
+
             background:
                 linear-gradient(
                     145deg,
@@ -172,9 +238,11 @@
                 );
 
             border: 2px solid var(--border-gold);
+
             border-radius: 10px;
 
             overflow: hidden;
+
             text-align: center;
 
             box-shadow:
@@ -186,65 +254,102 @@
                 box-shadow 0.3s ease;
         }
 
+
         .royal-card:hover {
-            transform: translateY(-5px);
+
+            transform: translateY(-6px);
 
             box-shadow:
-                0 10px 25px rgba(245, 215, 127, 0.4);
+                0 10px 28px rgba(245, 215, 127, 0.5),
+                0 0 15px rgba(157, 78, 221, 0.25);
         }
 
+
         .royal-card img {
+
             width: 100%;
+
             height: 250px;
 
             object-fit: cover;
 
-            border-bottom: 2px solid var(--border-gold);
+            object-position: center;
+
+            border-bottom:
+                2px solid var(--border-gold);
 
             filter:
-                sepia(0.12)
+                sepia(0.08)
                 contrast(1.15)
-                brightness(0.9);
+                brightness(0.92);
 
             display: block;
         }
 
+
+        /* Ajuste específico do rei */
+
         .royal-card:first-child img {
+
             object-position: center top;
         }
 
-        .royal-card h4 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold-bright);
 
-            margin: 10px 0 3px;
+        .royal-card h4 {
+
+            font-family:
+                'Cinzel',
+                serif;
+
+            color:
+                var(--gold-bright);
+
+            margin:
+                10px 0 3px;
+
             font-size: 1rem;
+
+            text-shadow:
+                0 0 6px rgba(245,215,127,0.3);
         }
+
 
         .royal-card span {
-            color: var(--text-muted);
-            font-size: 0.8rem;
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.8rem;
 
             display: block;
+
             margin-bottom: 10px;
-            padding: 0 5px;
+
+            padding: 0 8px;
         }
 
-        /* =========================
+
+        /* =================================
            ABAS
-        ========================= */
+        ================================= */
 
         .nav-tabs {
+
             display: flex;
+
             justify-content: center;
 
             gap: 15px;
+
             margin-bottom: 25px;
 
             flex-wrap: wrap;
         }
 
+
         .tab-btn {
+
             background:
                 linear-gradient(
                     180deg,
@@ -252,29 +357,48 @@
                     #170505 100%
                 );
 
-            color: var(--gold);
-            border: 2px solid var(--border-gold);
+            color:
+                var(--gold);
 
-            padding: 14px 30px;
+            border:
+                2px solid var(--border-gold);
 
-            cursor: pointer;
-            border-radius: 8px;
+            padding:
+                14px 30px;
 
-            font-family: 'Cinzel', serif;
-            font-weight: 800;
-            font-size: 1rem;
+            cursor:
+                pointer;
 
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            border-radius:
+                8px;
 
-            transition: all 0.3s ease;
+            font-family:
+                'Cinzel',
+                serif;
+
+            font-weight:
+                800;
+
+            font-size:
+                1rem;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                2px;
+
+            transition:
+                all 0.3s ease;
 
             box-shadow:
                 0 5px 15px rgba(0,0,0,0.7);
         }
 
+
         .tab-btn.active,
         .tab-btn:hover {
+
             background:
                 linear-gradient(
                     180deg,
@@ -282,20 +406,27 @@
                     var(--gold-dark) 100%
                 );
 
-            color: #0a0502;
-            border-color: var(--gold-bright);
+            color:
+                #0a0502;
+
+            border-color:
+                var(--gold-bright);
 
             box-shadow:
-                0 0 20px rgba(245, 215, 127, 0.7);
+                0 0 20px
+                rgba(245,215,127,0.7);
 
-            transform: translateY(-2px);
+            transform:
+                translateY(-2px);
         }
 
-        /* =========================
+
+        /* =================================
            GRID
-        ========================= */
+        ================================= */
 
         .grid {
+
             display: grid;
 
             grid-template-columns:
@@ -307,143 +438,228 @@
             gap: 22px;
         }
 
+
         .card {
-            background: var(--parchment-card);
 
-            border: 2px solid var(--border-gold);
+            background:
+                var(--parchment-card);
 
-            padding: 22px;
-            border-radius: 10px;
+            border:
+                2px solid var(--border-gold);
+
+            padding:
+                22px;
+
+            border-radius:
+                10px;
 
             box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.8),
-                inset 0 0 25px rgba(0, 0, 0, 0.6);
+                0 10px 25px rgba(0,0,0,0.8),
+                inset 0 0 25px rgba(0,0,0,0.6);
 
-            position: relative;
+            position:
+                relative;
         }
+
 
         .card::before {
-            content: "⚜";
 
-            position: absolute;
+            content:
+                "⚜";
 
-            top: 6px;
-            right: 12px;
+            position:
+                absolute;
 
-            color: var(--border-gold);
-            font-size: 1.2rem;
+            top:
+                6px;
 
-            opacity: 0.5;
+            right:
+                12px;
+
+            color:
+                var(--border-gold);
+
+            font-size:
+                1.2rem;
+
+            opacity:
+                0.5;
         }
+
 
         .card h2,
         .card h3 {
-            font-family: 'Cinzel', serif;
 
-            color: var(--gold-bright);
+            font-family:
+                'Cinzel',
+                serif;
+
+            color:
+                var(--gold-bright);
 
             border-bottom:
                 2px solid var(--border-gold);
 
-            padding-bottom: 8px;
-            margin-bottom: 14px;
+            padding-bottom:
+                8px;
 
-            font-size: 1.3rem;
+            margin-bottom:
+                14px;
+
+            font-size:
+                1.3rem;
 
             text-shadow:
-                0 0 8px rgba(245, 215, 127, 0.3);
+                0 0 8px
+                rgba(245,215,127,0.3);
         }
+
 
         .card p,
         .card ul {
-            color: var(--text-light);
 
-            font-size: 1.05rem;
-            line-height: 1.6;
+            color:
+                var(--text-light);
+
+            font-size:
+                1.05rem;
+
+            line-height:
+                1.6;
         }
+
 
         ul {
-            padding-left: 20px;
+
+            padding-left:
+                20px;
         }
+
 
         li {
-            margin-bottom: 10px;
-            color: var(--text-muted);
+
+            margin-bottom:
+                10px;
+
+            color:
+                var(--text-muted);
         }
+
 
         li strong {
-            color: var(--gold);
+
+            color:
+                var(--gold);
         }
 
-        /* =========================
+
+        /* =================================
            STATUS
-        ========================= */
+        ================================= */
 
         .stats-box {
-            display: flex;
-            justify-content: space-around;
 
-            background: rgba(0, 0, 0, 0.7);
+            display:
+                flex;
 
-            padding: 15px;
-            border-radius: 8px;
+            justify-content:
+                space-around;
 
-            margin: 15px 0;
+            background:
+                rgba(0,0,0,0.7);
 
-            border: 1px solid var(--border-gold);
+            padding:
+                15px;
+
+            border-radius:
+                8px;
+
+            margin:
+                15px 0;
+
+            border:
+                1px solid var(--border-gold);
 
             box-shadow:
-                inset 0 0 10px rgba(0, 0, 0, 0.8);
+                inset 0 0 10px rgba(0,0,0,0.8);
         }
+
 
         .stat-item {
-            text-align: center;
+
+            text-align:
+                center;
         }
+
 
         .stat-val {
-            font-family: 'Cinzel', serif;
 
-            font-size: 1.5rem;
+            font-family:
+                'Cinzel',
+                serif;
 
-            color: var(--gold-bright);
+            font-size:
+                1.5rem;
 
-            font-weight: 900;
+            color:
+                var(--gold-bright);
+
+            font-weight:
+                900;
         }
+
 
         .stat-lbl {
-            font-size: 0.8rem;
 
-            color: var(--gold);
+            font-size:
+                0.8rem;
 
-            text-transform: uppercase;
+            color:
+                var(--gold);
 
-            font-family: 'Cinzel', serif;
+            text-transform:
+                uppercase;
 
-            margin-top: 4px;
+            font-family:
+                'Cinzel',
+                serif;
+
+            margin-top:
+                4px;
         }
 
-        /* =========================
-           XP
-        ========================= */
+
+        /* =================================
+           BARRA DE XP
+        ================================= */
 
         .bar-bg {
-            background: #000;
 
-            height: 18px;
+            background:
+                #000;
 
-            border-radius: 9px;
+            height:
+                18px;
 
-            border: 1px solid var(--border-gold);
+            border-radius:
+                9px;
 
-            overflow: hidden;
+            border:
+                1px solid var(--border-gold);
 
-            margin-top: 8px;
+            overflow:
+                hidden;
+
+            margin-top:
+                8px;
 
             box-shadow:
                 inset 0 0 8px #000;
         }
 
+
         .bar-fill {
+
             background:
                 linear-gradient(
                     90deg,
@@ -452,8 +668,11 @@
                     var(--gold-bright)
                 );
 
-            height: 100%;
-            width: 0%;
+            height:
+                100%;
+
+            width:
+                0%;
 
             transition:
                 width 0.4s ease-out;
@@ -462,11 +681,13 @@
                 0 0 12px var(--gold);
         }
 
-        /* =========================
+
+        /* =================================
            BOTÕES
-        ========================= */
+        ================================= */
 
         .btn {
+
             background:
                 linear-gradient(
                     180deg,
@@ -474,37 +695,53 @@
                     #200202 100%
                 );
 
-            color: var(--gold-bright);
+            color:
+                var(--gold-bright);
 
-            border: 2px solid var(--border-gold);
+            border:
+                2px solid var(--border-gold);
 
-            padding: 14px;
+            padding:
+                14px;
 
-            width: 100%;
+            width:
+                100%;
 
-            border-radius: 6px;
+            border-radius:
+                6px;
 
-            cursor: pointer;
+            cursor:
+                pointer;
 
-            font-family: 'Cinzel', serif;
+            font-family:
+                'Cinzel',
+                serif;
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
-            font-size: 0.95rem;
+            font-size:
+                0.95rem;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
 
-            margin-top: 10px;
+            margin-top:
+                10px;
 
-            transition: all 0.25s ease;
+            transition:
+                all 0.25s ease;
 
             box-shadow:
                 0 4px 10px rgba(0,0,0,0.5);
 
-            letter-spacing: 1px;
+            letter-spacing:
+                1px;
         }
 
+
         .btn:hover {
+
             background:
                 linear-gradient(
                     180deg,
@@ -512,81 +749,117 @@
                     #400000 100%
                 );
 
-            border-color: var(--gold-bright);
+            border-color:
+                var(--gold-bright);
 
             box-shadow:
-                0 0 15px rgba(245, 215, 127, 0.6);
+                0 0 15px
+                rgba(245,215,127,0.6);
 
-            color: #fff;
+            color:
+                #fff;
         }
+
 
         .btn:disabled {
-            opacity: 0.35;
 
-            cursor: not-allowed;
+            opacity:
+                0.35;
 
-            border-color: #554433;
+            cursor:
+                not-allowed;
 
-            background: #100b08;
+            border-color:
+                #554433;
 
-            color: var(--text-muted);
+            background:
+                #100b08;
 
-            box-shadow: none;
+            color:
+                var(--text-muted);
+
+            box-shadow:
+                none;
         }
 
-        /* =========================
+
+        /* =================================
            DIÁRIO
-        ========================= */
+        ================================= */
 
         .log {
-            background: #0a0604;
 
-            border: 2px solid var(--border-gold);
+            background:
+                #0a0604;
 
-            height: 160px;
+            border:
+                2px solid var(--border-gold);
 
-            overflow-y: auto;
+            height:
+                160px;
 
-            padding: 12px;
+            overflow-y:
+                auto;
+
+            padding:
+                12px;
 
             font-family:
                 'MedievalSharp',
                 Georgia,
                 serif;
 
-            font-size: 0.95rem;
+            font-size:
+                0.95rem;
 
-            color: var(--text-muted);
+            color:
+                var(--text-muted);
 
-            border-radius: 6px;
+            border-radius:
+                6px;
 
             box-shadow:
                 inset 0 0 15px #000;
         }
 
+
         .log-entry {
-            margin-bottom: 6px;
+
+            margin-bottom:
+                6px;
 
             border-bottom:
                 1px solid
-                rgba(197, 160, 89, 0.1);
+                rgba(197,160,89,0.1);
 
-            padding-bottom: 3px;
+            padding-bottom:
+                3px;
         }
+
 
         .log-entry.gold {
-            color: var(--gold-bright);
-            font-weight: bold;
+
+            color:
+                var(--gold-bright);
+
+            font-weight:
+                bold;
         }
+
 
         .log-entry.magic {
-            color: var(--purple-glow);
-            font-weight: bold;
+
+            color:
+                var(--purple-glow);
+
+            font-weight:
+                bold;
         }
 
-        /* =========================
-           RESPONSIVIDADE
-        ========================= */
+
+        /* =================================
+           RESPONSIVO
+        ================================= */
 
         @media (max-width: 600px) {
 
@@ -594,50 +867,78 @@
                 padding: 10px 6px;
             }
 
+
             header {
                 padding: 25px 12px;
             }
+
 
             header h1 {
                 font-size: 2rem;
             }
 
+
             .magic-gravity-brand {
-                font-size: 1rem;
-                letter-spacing: 3px;
+
+                font-size:
+                    1rem;
+
+                letter-spacing:
+                    3px;
             }
+
 
             header p {
-                font-size: 0.9rem;
+
+                font-size:
+                    0.9rem;
             }
+
 
             .royal-card img {
-                height: 220px;
+
+                height:
+                    220px;
             }
+
 
             .tab-btn {
-                width: 100%;
-                padding: 12px;
+
+                width:
+                    100%;
+
+                padding:
+                    12px;
             }
+
 
             .stats-box {
-                gap: 10px;
+
+                gap:
+                    10px;
             }
 
+
             .stat-val {
-                font-size: 1.2rem;
+
+                font-size:
+                    1.2rem;
             }
+
         }
+
     </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-    <!-- =========================
+
+    <!-- =================================
          CABEÇALHO
-    ========================= -->
+    ================================= -->
 
     <header>
 
@@ -657,19 +958,22 @@
     </header>
 
 
-    <!-- =========================
-         REIS E RAINHAS
-    ========================= -->
+    <!-- =================================
+         REALEZA
+    ================================= -->
 
     <div class="royalty-banner">
 
-        <!-- REI -->
+
+        <!-- =============================
+             REI
+        ============================== -->
+
         <div class="royal-card">
 
-            <!-- Retrato histórico de um rei real -->
             <img
                 src="https://images.treccani.it/ext-tool/extra/images/6/69/690e69837d06cfe83936140758304df5.jpg"
-                alt="Retrato histórico de um rei medieval"
+                alt="Rei medieval"
                 id="king-img"
             >
 
@@ -684,12 +988,15 @@
         </div>
 
 
-        <!-- RAINHA -->
+        <!-- =============================
+             RAINHA
+        ============================== -->
+
         <div class="royal-card">
 
             <img
-                src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80"
-                alt="Rainha Morgana"
+                src="https://media.easy-peasy.ai/19727734-2169-4093-bde2-8b60ecf5df7d/60716b53-95d0-42f8-b36d-312ca267698_medium.webp"
+                alt="Rainha medieval em um castelo"
             >
 
             <h4>
@@ -703,12 +1010,15 @@
         </div>
 
 
-        <!-- ARQUIMAGO -->
+        <!-- =============================
+             ARQUIMAGO
+        ============================== -->
+
         <div class="royal-card">
 
             <img
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80"
-                alt="Arquimago Eltor"
+                src="https://epic-user-img.s3.us-east-1.amazonaws.com/u8qolrgtkwic5ok1e4pztsx3ni0roa7szc2uxvha4.png?c=45"
+                alt="Arquimago em biblioteca mágica"
             >
 
             <h4>
@@ -724,9 +1034,9 @@
     </div>
 
 
-    <!-- =========================
+    <!-- =================================
          NAVEGAÇÃO
-    ========================= -->
+    ================================= -->
 
     <div class="nav-tabs">
 
@@ -736,6 +1046,7 @@
         >
             📜 O Reino & A Lenda
         </button>
+
 
         <button
             class="tab-btn"
@@ -747,9 +1058,9 @@
     </div>
 
 
-    <!-- =========================
-         ABA: APRESENTAÇÃO
-    ========================= -->
+    <!-- =================================
+         APRESENTAÇÃO
+    ================================= -->
 
     <div id="tab-presentation">
 
@@ -763,17 +1074,20 @@
                 </h2>
 
                 <p>
-                    Nas profundezas e picos cobertos pelas
-                    brumas das
+
+                    Nas profundezas e picos cobertos
+                    pelas brumas das
                     <strong>Montanhas Nebulosas</strong>,
                     ergue-se o imponente castelo da
                     <strong>Rocha Chueiri</strong>
                     sob a chancela da ordem
                     <strong>Magic Gravity</strong>.
+
                     Sob o olhar atento do Rei Valerius I
                     e da Rainha Morgana, jovens nobres
                     e bruxos aprendem o verdadeiro poder
                     do metal, do fogo e da gravidade arcana.
+
                 </p>
 
             </div>
@@ -786,13 +1100,16 @@
                 </h2>
 
                 <p>
+
                     Organizado anualmente pelo
                     <strong>Arquimago Eltor</strong>
                     sob decreto do Rei Valerius I,
                     o torneio imperial exige perícia
                     em feitiços e combate direto.
+
                     Apenas a turma ou família mais forte
                     conquistará o Cetro de Ouro Puríssimo.
+
                 </p>
 
             </div>
@@ -807,6 +1124,7 @@
                 <ul>
 
                     <li>
+
                         <strong>
                             Estudo Imperial (Passivo):
                         </strong>
@@ -814,9 +1132,12 @@
                         O conhecimento ancestral da
                         biblioteca real concede experiência
                         contínua (+XP/s).
+
                     </li>
 
+
                     <li>
+
                         <strong>
                             Caça de Criaturas (Ativo):
                         </strong>
@@ -824,6 +1145,7 @@
                         Enfrente feras lendárias nos
                         picos gelados para saquear tesouros,
                         acumular moedas de ouro e obter glória.
+
                     </li>
 
                 </ul>
@@ -838,12 +1160,18 @@
                 </h2>
 
                 <p>
+
                     Além dos segredos nos tomos reais,
                     o reino abriga ferozes
-                    <strong>Grifos e Dragões Ancestrais</strong>.
-                    Somente os aprendizes que provarem seu
-                    valor com riqueza e sabedoria conseguirão
-                    firmar um pacto místico com essas criaturas.
+                    <strong>
+                        Grifos e Dragões Ancestrais
+                    </strong>.
+
+                    Somente os aprendizes que provarem
+                    seu valor com riqueza e sabedoria
+                    conseguirão firmar um pacto místico
+                    com essas criaturas.
+
                 </p>
 
             </div>
@@ -853,26 +1181,29 @@
     </div>
 
 
-    <!-- =========================
-         ABA: JOGO
-    ========================= -->
+    <!-- =================================
+         JOGO
+    ================================= -->
 
     <div
         id="tab-game"
-        style="display: none;"
+        style="display:none;"
     >
 
         <div class="grid">
 
 
             <!-- STATUS -->
+
             <div class="card">
 
                 <h3>
                     👑 Status do Cavaleiro Arcano
                 </h3>
 
+
                 <div class="stats-box">
+
 
                     <div class="stat-item">
 
@@ -928,13 +1259,14 @@
 
                     <span
                         style="
-                            font-size: 0.85rem;
-                            color: var(--gold);
-                            font-family:'Cinzel', serif;
+                            font-size:0.85rem;
+                            color:var(--gold);
+                            font-family:'Cinzel',serif;
                         "
                     >
                         Evolução Arcana (XP)
                     </span>
+
 
                     <div class="bar-bg">
 
@@ -950,24 +1282,29 @@
             </div>
 
 
-            <!-- XP PASSIVO -->
+            <!-- SABEDORIA -->
+
             <div class="card">
 
                 <h3>
                     📜 Sabedoria Contínua do Reino
                 </h3>
 
+
                 <p
                     style="
-                        font-size: 0.95rem;
-                        color: var(--text-muted);
+                        font-size:0.95rem;
+                        color:var(--text-muted);
                     "
                 >
+
                     Mesmo distante das batalhas,
                     o treino contínuo na biblioteca
                     do castelo expande seu conhecimento
                     constantemente.
+
                 </p>
+
 
                 <div
                     style="
@@ -979,6 +1316,7 @@
                         text-shadow:0 0 10px var(--gold-dark);
                     "
                 >
+
                     +
 
                     <span id="passive-rate">
@@ -986,17 +1324,20 @@
                     </span>
 
                     XP / seg
+
                 </div>
 
             </div>
 
 
             <!-- CAÇA -->
+
             <div class="card">
 
                 <h3>
                     ⚔️ Caça & Pacto com Feras
                 </h3>
+
 
                 <button
                     class="btn"
@@ -1004,6 +1345,7 @@
                 >
                     ⚔️ Caçar Monstros no Pico
                 </button>
+
 
                 <button
                     class="btn"
@@ -1017,6 +1359,7 @@
                     🦅 Domar Grifo Imperial
                     (50 Ouro)
                 </button>
+
 
                 <button
                     class="btn"
@@ -1036,15 +1379,19 @@
         </div>
 
 
-        <!-- DIÁRIO -->
+        <!-- =================================
+             CRÔNICAS
+        ================================= -->
+
         <div
             class="card"
-            style="margin-top: 22px;"
+            style="margin-top:22px;"
         >
 
             <h3>
                 📜 Pergaminho das Crônicas Reais
             </h3>
+
 
             <div
                 class="log"
@@ -1054,10 +1401,12 @@
                 <div class="log-entry">
 
                     [Início]
+
                     Bem-vindo à Rocha Chueiri de
-                    Magic Gravity! As bênçãos da
-                    Rainha e do Rei Valerius I
-                    acompanham sua jornada...
+                    Magic Gravity!
+
+                    As bênçãos da Rainha e do Rei
+                    Valerius I acompanham sua jornada...
 
                 </div>
 
@@ -1070,11 +1419,16 @@
 </div>
 
 
-<!-- =========================
+<!-- =================================
      JAVASCRIPT
-========================= -->
+================================= -->
 
 <script>
+
+
+    /* =================================
+       JOGADOR
+    ================================= */
 
     let player = {
 
@@ -1093,9 +1447,9 @@
     };
 
 
-    /* =========================
+    /* =================================
        TROCAR ABA
-    ========================= */
+    ================================= */
 
     function switchTab(tab) {
 
@@ -1116,7 +1470,9 @@
 
 
         const btns =
-            document.querySelectorAll('.tab-btn');
+            document.querySelectorAll(
+                '.tab-btn'
+            );
 
 
         btns[0].classList.toggle(
@@ -1133,9 +1489,9 @@
     }
 
 
-    /* =========================
+    /* =================================
        DIÁRIO
-    ========================= */
+    ================================= */
 
     function addLog(
         msg,
@@ -1173,9 +1529,9 @@
     }
 
 
-    /* =========================
+    /* =================================
        GANHAR XP
-    ========================= */
+    ================================= */
 
     function gainXP(amount) {
 
@@ -1212,9 +1568,9 @@
     }
 
 
-    /* =========================
-       CAÇAR
-    ========================= */
+    /* =================================
+       CAÇAR MONSTROS
+    ================================= */
 
     function hunt() {
 
@@ -1223,22 +1579,36 @@
             {
                 name:
                     'Gárgula dos Portões',
-                xp: 15,
-                gold: 12
+
+                xp:
+                    15,
+
+                gold:
+                    12
             },
+
 
             {
                 name:
                     'Lobo das Neves com Armadura',
-                xp: 25,
-                gold: 20
+
+                xp:
+                    25,
+
+                gold:
+                    20
             },
+
 
             {
                 name:
                     'Sombra do Dragão Antigo',
-                xp: 50,
-                gold: 40
+
+                xp:
+                    50,
+
+                gold:
+                    40
             }
 
         ];
@@ -1269,9 +1639,9 @@
     }
 
 
-    /* =========================
-       ADOTAR MASCOTE
-    ========================= */
+    /* =================================
+       ADOTAR CRIATURA
+    ================================= */
 
     function adopt(
         petName,
@@ -1309,9 +1679,9 @@
     }
 
 
-    /* =========================
+    /* =================================
        ATUALIZAR INTERFACE
-    ========================= */
+    ================================= */
 
     function updateUI() {
 
@@ -1340,9 +1710,10 @@
 
 
         const pct =
-            (player.xp /
-                player.nextXp) *
-            100;
+            (
+                player.xp /
+                player.nextXp
+            ) * 100;
 
 
         document.getElementById(
@@ -1369,9 +1740,9 @@
     }
 
 
-    /* =========================
+    /* =================================
        XP AUTOMÁTICO
-    ========================= */
+    ================================= */
 
     setInterval(
         () => {
@@ -1385,9 +1756,9 @@
     );
 
 
-    /* =========================
+    /* =================================
        INICIALIZAÇÃO
-    ========================= */
+    ================================= */
 
     updateUI();
 
