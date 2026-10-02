@@ -1,94 +1,297 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocha Chueiri - RPG Ancestral</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocha Chueiri - Escola Mágica Ancestral</title>
     <style>
-        :root { --bg: #0f0f17; --card: #1a1a26; --gold: #d4af37; --text: #e2e2e8; --dim: #9a9ab0; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Georgia', serif; }
-        body { background: var(--bg); color: var(--text); padding: 15px; line-height: 1.4; }
-        header { text-align: center; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 15px; }
-        h1 { color: var(--gold); text-transform: uppercase; }
-        .tabs { display: flex; gap: 10px; justify-content: center; margin-bottom: 15px; }
-        .tab-btn { background: #2a2a3d; color: var(--gold); border: 1px solid var(--gold); padding: 6px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; }
-        .tab-btn.active { background: var(--gold); color: #000; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
-        .card { background: var(--card); border: 1px solid #2e2e42; padding: 12px; border-radius: 8px; }
-        .card h3 { color: var(--gold); margin-bottom: 6px; border-bottom: 1px solid #2e2e42; }
-        .stats { display: flex; justify-content: space-around; background: #0a0a0f; padding: 6px; border-radius: 4px; margin: 8px 0; }
-        .bar-bg { background: #000; height: 10px; border-radius: 5px; border: 1px solid var(--gold); overflow: hidden; }
-        .bar-fill { background: linear-gradient(90deg, var(--gold), #ff8c00); height: 100%; width: 0%; transition: 0.3s; }
-        .btn { background: #2a2a3d; color: var(--gold); border: 1px solid var(--gold); padding: 8px; width: 100%; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 6px; }
+        :root {
+            --bg: #0b0b10;
+            --panel: #14141e;
+            --border: #2a2a3c;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --text: #e2e2e8;
+            --dim: #8a8a9e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cinzel', 'Georgia', serif; }
+        body { background: var(--bg); color: var(--text); padding: 20px; line-height: 1.6; }
+
+        header {
+            text-align: center;
+            padding: 30px 10px;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 25px;
+            background: linear-gradient(180deg, #181824 0%, var(--bg) 100%);
+        }
+
+        header h1 {
+            color: var(--gold);
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        header p { color: var(--dim); font-style: italic; margin-top: 5px; }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .tab-btn {
+            background: var(--panel);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--gold);
+            color: #000;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .card h2, .card h3 {
+            color: var(--gold);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .stats-box {
+            display: flex;
+            justify-content: space-around;
+            background: #08080c;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border: 1px solid #1f1f2e;
+        }
+
+        .stat-val { font-size: 1.3rem; color: var(--gold); font-weight: bold; }
+        .stat-lbl { font-size: 0.75rem; color: var(--dim); text-transform: uppercase; }
+
+        .bar-bg { background: #000; height: 14px; border-radius: 7px; border: 1px solid var(--gold); overflow: hidden; margin-top: 5px; }
+        .bar-fill { background: linear-gradient(90deg, var(--gold), #ff8c00); height: 100%; width: 0%; transition: width 0.3s; }
+
+        .btn {
+            background: #202030;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 12px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
         .btn:hover { background: var(--gold); color: #000; }
-        .btn:disabled { opacity: 0.4; cursor: not-allowed; }
-        .log { background: #0a0a0f; border: 1px solid #2e2e42; height: 90px; overflow-y: auto; padding: 6px; font-family: monospace; font-size: 0.8rem; color: var(--dim); }
+        .btn:disabled { opacity: 0.3; cursor: not-allowed; border-color: var(--dim); color: var(--dim); }
+
+        .log {
+            background: #06060a;
+            border: 1px solid var(--border);
+            height: 140px;
+            overflow-y: auto;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--dim);
+            border-radius: 4px;
+        }
+
+        .log-entry { margin-bottom: 4px; }
+        .log-entry.gold { color: var(--gold); }
+        .log-entry.magic { color: #a855f7; }
+
+        ul { padding-left: 20px; color: var(--dim); }
+        li { margin-bottom: 8px; }
     </style>
 </head>
 <body>
-    <header><h1>Rocha Chueiri</h1><p>Escola Mágica Ancestral das Montanhas Nebulosas</p></header>
-    <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('p')">📜 Apresentação</button>
-        <button class="tab-btn" onclick="switchTab('g')">🎮 Simulador RPG</button>
+
+    <header>
+        <h1>Rocha Chueiri</h1>
+        <p>Escola Mágica Ancestral das Montanhas Nebulosas</p>
+    </header>
+
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('presentation')">📜 Apresentação</button>
+        <button class="tab-btn" onclick="switchTab('game')">🎮 Simulador RPG</button>
     </div>
-    <div id="p-tab">
-        <div class="grid">
-            <div class="card"><h3>🏰 Lore & Escola</h3><p>Escondida nas Montanhas Nebulosas, a Rocha Chueiri reúne jovens de várias raças para aprender magia com grifos, fênixes e dragões.</p></div>
-            <div class="card"><h3>🏆 O Torneio</h3><p>O Arquimago Professor organiza a competição entre famílias e turmas em busca do troféu e revelação de segredos ocultos.</p></div>
-            <div class="card"><h3>⚡ Evolução</h3><p><b>Estudo:</b> Teoria contínua à distância (+XP passivo).<br><b>Caça:</b> Presença e coragem para vencer feras e obter ouro.</p></div>
+
+    <div class="container">
+        <!-- ABA APRESENTAÇÃO -->
+        <div id="tab-presentation">
+            <div class="grid">
+                <div class="card">
+                    <h2>🏰 O Cenário & Lore</h2>
+                    <p>Nas profundezas das <strong>Montanhas Nebulosas</strong>, a lendária academia <strong>Rocha Chueiri</strong> acolhe jovens de diversas raças. Lá, os alunos aprendem o domínio arcano ao lado de feras magníficas como grifos, fênixes e dragões.</p>
+                </div>
+
+                <div class="card">
+                    <h2>🏆 O Torneio do Arquimago</h2>
+                    <p>Organizado pelo <strong>Arquimago Professor</strong>, o torneio anual coloca turmas e famílias rivais à prova. As equipes enfrentam desafios de combate e enigmas em busca do troféu e da glória eterna.</p>
+                </div>
+
+                <div class="card">
+                    <h2>⚡ Sistema de Evolução</h2>
+                    <ul>
+                        <li><strong>Estudo Mágico (Passivo):</strong> A teoria é absorvida à distância, como um sussurro contínuo que garante XP constante.</li>
+                        <li><strong>Caça de Monstros (Ativo):</strong> Exige presença e coragem nas montanhas para derrotar criaturas, acelerar o Nível e ganhar Ouro.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>🗡️ Segredos & Rivalidade</h2>
+                    <p>A competição não revela apenas os alunos mais habilidosos e unidoss, mas também traz à tona <strong>segredos ancestrais ocultos</strong> nos corredores da Rocha Chueiri.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABA SIMULADOR RPG -->
+        <div id="tab-game" style="display: none;">
+            <div class="grid">
+                <div class="card">
+                    <h3> Status do Aluno</h3>
+                    <div class="stats-box">
+                        <div style="text-align:center;">
+                            <div class="stat-val" id="player-lvl">1</div>
+                            <div class="stat-lbl">Nível</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div class="stat-val" id="player-gold">0</div>
+                            <div class="stat-lbl">Ouro</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div class="stat-val" id="player-pet">Nenhum</div>
+                            <div class="stat-lbl">Mascote</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--dim);">Progresso para o próximo Nível (XP)</span>
+                        <div class="bar-bg"><div class="bar-fill" id="xp-bar"></div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3> Sabedoria Contínua</h3>
+                    <p style="font-size: 0.85rem; color: var(--dim);">O estudo mágico acontece constantemente à distância como um sussurro de sabedoria.</p>
+                    <div style="text-align:center; font-size: 1.3rem; color: var(--gold); margin-top: 15px;">
+                        +<span id="passive-rate">1</span> XP / seg
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3> Caça de Monstros & Mascotes</h3>
+                    <button class="btn" onclick="hunt()">⚔️ Caçar nas Montanhas</button>
+                    <button class="btn" id="btn-griffon" onclick="adopt('Grifo', 50, 3)">🦅 Adotar Grifo (50 Ouro)</button>
+                    <button class="btn" id="btn-dragon" onclick="adopt('Dragão', 200, 8)">🐉 Adotar Dragão (200 Ouro)</button>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h3> Diário Místico</h3>
+                <div class="log" id="game-log">
+                    <div class="log-entry">[Início] Bem-vindo à Rocha Chueiri! Os sussurros arcanos começaram...</div>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="g-tab" style="display:none;">
-        <div class="grid">
-            <div class="card">
-                <h3>Status do Aluno</h3>
-                <div class="stats"><div><b>Nível:</b> <span id="lvl">1</span></div><div><b>Ouro:</b> <span id="gold">0</span></div><div><b>Mascote:</b> <span id="pet">Nenhum</span></div></div>
-                <div>XP: <div class="bar-bg"><div class="bar-fill" id="xp-bar"></div></div></div>
-            </div>
-            <div class="card">
-                <h3>Sabedoria Contínua</h3>
-                <p style="color:var(--dim); font-size:0.8rem;">Sussurro constante de magia à distância.</p>
-                <div style="color:var(--gold); font-size:1.1rem; text-align:center; margin-top:5px;">+<span id="rate">1</span> XP/s</div>
-            </div>
-            <div class="card">
-                <h3>Caça & Companheiros</h3>
-                <button class="btn" onclick="hunt()">⚔️ Caçar Monstros</button>
-                <button class="btn" id="b-gri" onclick="buyPet('Grifo', 50, 3)">🦅 Adotar Grifo (50 G)</button>
-                <button class="btn" id="b-dra" onclick="buyPet('Dragão', 200, 8)">🐉 Adotar Dragão (200 G)</button>
-            </div>
-        </div>
-        <div class="card" style="margin-top:10px;">
-            <h3>Registros da Academia</h3>
-            <div class="log" id="log"><div>[Sistema] Bem-vindo à Rocha Chueiri!</div></div>
-        </div>
-    </div>
+
     <script>
-        let p = { lvl: 1, xp: 0, next: 50, gold: 0, pet: 'Nenhum', rate: 1 };
-        function switchTab(t) {
-            document.getElementById('p-tab').style.display = t === 'p' ? 'block' : 'none';
-            document.getElementById('g-tab').style.display = t === 'g' ? 'block' : 'none';
-            document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', (i===0 && t==='p')||(i===1 && t==='g')));
+        let player = { lvl: 1, xp: 0, nextXp: 50, gold: 0, pet: 'Nenhum', rate: 1 };
+
+        function switchTab(tab) {
+            document.getElementById('tab-presentation').style.display = tab === 'presentation' ? 'block' : 'none';
+            document.getElementById('tab-game').style.display = tab === 'game' ? 'block' : 'none';
+            
+            const btns = document.querySelectorAll('.tab-btn');
+            btns[0].classList.toggle('active', tab === 'presentation');
+            btns[1].classList.toggle('active', tab === 'game');
         }
-        function log(m) { const l = document.getElementById('log'); l.innerHTML += `<div>> ${m}</div>`; l.scrollTop = l.scrollHeight; }
-        function addXP(v) {
-            p.xp += v;
-            if (p.xp >= p.next) { p.xp -= p.next; p.lvl++; p.next = Math.floor(p.next * 1.5); log(`🌟 Subiu para o Nível ${p.lvl}!`); }
-            update();
+
+        function addLog(msg, type = '') {
+            const logBox = document.getElementById('game-log');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `> ${msg}`;
+            logBox.appendChild(entry);
+            logBox.scrollTop = logBox.scrollHeight;
         }
+
+        function gainXP(amount) {
+            player.xp += amount;
+            if (player.xp >= player.nextXp) {
+                player.xp -= player.nextXp;
+                player.lvl++;
+                player.nextXp = Math.floor(player.nextXp * 1.5);
+                addLog(`🌟 Parabéns! Você subiu para o Nível ${player.lvl}!`, 'gold');
+            }
+            updateUI();
+        }
+
         function hunt() {
-            const m = [{n:'Gárgula',x:15,g:10}, {n:'Lobo Nevado',x:25,g:18}, {n:'Sombra',x:45,g:30}][Math.floor(Math.random()*3)];
-            p.gold += m.g; log(`Derrotou ${m.n}! +${m.x} XP, +${m.g} Ouro.`); addXP(m.x);
+            const monsters = [
+                { name: 'Gárgula de Pedra', xp: 15, gold: 12 },
+                { name: 'Lobo das Nevoadas', xp: 25, gold: 20 },
+                { name: 'Sombra da Caverna', xp: 45, gold: 35 }
+            ];
+            const m = monsters[Math.floor(Math.random() * monsters.length)];
+            player.gold += m.gold;
+            addLog(`Caça: Derrotou um ${m.name}! +${m.xP || m.xp} XP e +${m.gold} Ouro.`);
+            gainXP(m.xp);
         }
-        function buyPet(n, c, r) {
-            if (p.gold >= c && p.pet !== n) { p.gold -= c; p.pet = n; p.rate = r; log(`✨ Pacto com ${n}! XP: +${r}/s.`); update(); }
+
+        function adopt(petName, cost, newRate) {
+            if (player.gold >= cost && player.pet !== petName) {
+                player.gold -= cost;
+                player.pet = petName;
+                player.rate = newRate;
+                addLog(`✨ Pacto selado! Você adquiriu um ${petName}. Ganho de XP passou para +${newRate}/s.`, 'magic');
+                updateUI();
+            }
         }
-        function update() {
-            document.getElementById('lvl').innerText = p.lvl; document.getElementById('gold').innerText = p.gold;
-            document.getElementById('pet').innerText = p.pet; document.getElementById('rate').innerText = p.rate;
-            document.getElementById('xp-bar').style.width = `${(p.xp/p.next)*100}%`;
-            document.getElementById('b-gri').disabled = p.gold < 50 || p.pet === 'Grifo';
-            document.getElementById('b-dra').disabled = p.gold < 200 || p.pet === 'Dragão';
+
+        function updateUI() {
+            document.getElementById('player-lvl').textContent = player.lvl;
+            document.getElementById('player-gold').textContent = player.gold;
+            document.getElementById('player-pet').textContent = player.pet;
+            document.getElementById('passive-rate').textContent = player.rate;
+
+            const pct = (player.xp / player.nextXp) * 100;
+            document.getElementById('xp-bar').style.width = `${pct}%`;
+
+            document.getElementById('btn-griffon').disabled = player.gold < 50 || player.pet === 'Grifo';
+            document.getElementById('btn-dragon').disabled = player.gold < 200 || player.pet === 'Dragão';
         }
-        setInterval(() => addXP(p.rate), 1000);
+
+        setInterval(() => gainXP(player.rate), 1000);
+        updateUI();
     </script>
 </body>
 </html>
