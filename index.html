@@ -4,42 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Magic Gravity — Rocha Chueiri</title>
+<title>MAGIC GRAVITY — Rocha Chueiri</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
 
-/* =====================================================
-   MAGIC GRAVITY — TEMA MEDIEVAL
-===================================================== */
+/* =========================================================
+   CORES
+========================================================= */
 
 :root {
-    --black: #080604;
-    --dark: #120d08;
-    --stone: #211a13;
-    --stone-light: #392d20;
+    --red: #7a1111;
+    --red-dark: #3b0505;
+    --red-deep: #210303;
 
-    --green: #10251a;
-    --green-light: #1d422b;
+    --gold: #b88622;
+    --gold-light: #f4d477;
+    --gold-dark: #765012;
 
-    --gold: #c89b3c;
-    --gold-light: #ffe39a;
-    --gold-dark: #705018;
+    --paper: #d5b875;
+    --paper-light: #ead39a;
+    --paper-dark: #927344;
 
-    --red: #641b15;
-    --red-light: #a73828;
-
-    --text: #eee4cc;
-    --muted: #b7aa8e;
-
-    --border: #987432;
+    --ink: #29170b;
+    --cream: #f5e7bc;
 }
 
-/* RESET */
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -47,346 +45,399 @@
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
+
     min-height: 100vh;
 
-    color: var(--text);
+    color: var(--ink);
 
     font-family:
         'MedievalSharp',
         Georgia,
         serif;
 
-    background:
-        linear-gradient(
-            rgba(5,3,2,.72),
-            rgba(5,3,2,.9)
-        ),
-        url("https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=2200&q=90")
-        center / cover fixed;
+    padding: 20px 10px;
 
-    padding: 18px 10px;
+    /* FUNDO DE PERGAMINHO */
+
+    background-color: #6d4b25;
+
+    background-image:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(255,238,174,.8) 0%,
+            rgba(181,137,69,.65) 45%,
+            rgba(65,35,13,.95) 100%
+        ),
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(80,45,15,.12) 0px,
+            rgba(80,45,15,.12) 2px,
+            transparent 2px,
+            transparent 7px
+        );
+
+    background-attachment: fixed;
 }
 
-/* =====================================================
-   FUMAÇA / ATMOSFERA
-===================================================== */
+
+/* textura de pergaminho */
 
 body::before {
+
     content: "";
+
     position: fixed;
+
     inset: 0;
 
     pointer-events: none;
 
+    opacity: .45;
+
     background:
+
         radial-gradient(
-            circle at 50% 10%,
-            rgba(255,194,76,.12),
-            transparent 30%
+            circle at 15% 20%,
+            rgba(75,40,10,.35),
+            transparent 18%
         ),
+
         radial-gradient(
-            circle at 10% 80%,
-            rgba(38,92,54,.16),
-            transparent 30%
+            circle at 85% 70%,
+            rgba(75,40,10,.3),
+            transparent 22%
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            rgba(70,40,15,.08) 1px,
+            transparent 3px,
+            transparent 11px
         );
 
     z-index: -1;
 }
 
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container {
-    width: 100%;
-    max-width: 1250px;
+
+    max-width: 1200px;
+
     margin: auto;
-}
 
-/* =====================================================
-   HEADER
-===================================================== */
-
-header {
     position: relative;
 
-    min-height: 500px;
+    background:
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+        linear-gradient(
+            rgba(235,207,143,.92),
+            rgba(202,163,89,.92)
+        );
+
+    border:
+
+        5px solid
+        var(--gold-dark);
+
+    box-shadow:
+
+        0 0 0 8px #351706,
+
+        0 20px 60px
+        rgba(0,0,0,.75);
+
+    padding: 15px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    position: relative;
 
     text-align: center;
 
-    padding: 50px 20px;
-
-    overflow: hidden;
-
-    border:
-        4px solid
-        var(--border);
-
-    border-radius: 10px;
+    padding: 55px 20px;
 
     background:
+
         linear-gradient(
-            rgba(8,5,3,.25),
-            rgba(8,5,3,.88)
-        ),
-        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=90")
-        center / cover;
-
-    box-shadow:
-        0 25px 70px #000,
-        inset 0 0 100px #000;
-}
-
-header::after {
-    content: "";
-
-    position: absolute;
-    inset: 12px;
+            rgba(82,7,7,.92),
+            rgba(48,3,3,.96)
+        );
 
     border:
-        1px solid
-        rgba(255,218,120,.45);
-
-    pointer-events: none;
-}
-
-/* TOCHAS */
-
-.torch {
-    position: absolute;
-
-    width: 15px;
-    height: 15px;
-
-    background: #ffb52e;
-
-    border-radius: 50%;
+        4px solid var(--gold);
 
     box-shadow:
-        0 0 10px #ff9d00,
-        0 0 30px #ff7b00,
-        0 0 70px #ff7b00;
 
-    animation:
-        flicker .8s infinite alternate;
+        inset 0 0 45px rgba(0,0,0,.8),
+
+        0 10px 25px rgba(44,18,3,.55);
+
+    overflow: hidden;
 }
 
-.torch.left {
-    left: 7%;
-    top: 25%;
-}
 
-.torch.right {
-    right: 7%;
-    top: 25%;
-}
+/* ornamento */
 
-@keyframes flicker {
-    from {
-        transform: scale(.8);
-        opacity: .7;
-    }
+header::before {
 
-    to {
-        transform: scale(1.25);
-        opacity: 1;
-    }
-}
+    content:
+        "⚜  ✦  ⚔  ✦  ⚜";
 
-.crown {
-    font-size: 3rem;
+    display: block;
 
     color: var(--gold-light);
 
-    text-shadow:
-        0 0 20px #e7b83e,
-        0 3px 5px #000;
+    font-size: 1.5rem;
 
-    margin-bottom: 20px;
+    letter-spacing: 8px;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 0 12px var(--gold);
 }
 
+
+header::after {
+
+    content:
+        "✦  ━━━━━━━━━━━━━━━━━  ✦";
+
+    display: block;
+
+    color: var(--gold);
+
+    margin-top: 22px;
+
+    font-size: 1rem;
+
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
 .magic-title {
-    position: relative;
 
     font-family:
         'Cinzel',
         serif;
 
+    font-size:
+        clamp(3rem, 9vw, 7rem);
+
     font-weight: 900;
 
-    font-size:
-        clamp(3rem, 9vw, 7.5rem);
+    color: var(--gold-light);
 
     letter-spacing:
-        clamp(3px, 1vw, 13px);
+        clamp(2px, 1vw, 13px);
 
-    color:
-        var(--gold-light);
-
-    text-transform:
-        uppercase;
+    text-transform: uppercase;
 
     text-shadow:
-        0 4px 0 #6d4a15,
-        0 8px 0 #33240d,
-        0 12px 25px #000,
-        0 0 25px #f2c65b,
-        0 0 60px rgba(255,185,40,.5);
 
-    z-index: 2;
+        0 3px 0 #67420b,
+
+        0 6px 0 #3d2507,
+
+        0 10px 15px #000,
+
+        0 0 20px rgba(255,214,101,.8);
 }
 
-.subtitle-line {
-    margin-top: 22px;
-
-    font-family: Cinzel, serif;
-
-    font-size: 1.15rem;
-
-    color: var(--gold);
-
-    letter-spacing: 6px;
-}
 
 header h1 {
+
     margin-top: 20px;
+
+    color: #fff1c1;
 
     font-family: Cinzel, serif;
 
     font-size:
         clamp(1.5rem, 4vw, 2.7rem);
 
-    color: white;
+    letter-spacing: 4px;
 
     text-shadow:
-        0 3px 8px #000;
+        0 3px 7px #000;
 }
 
+
 header p {
-    max-width: 750px;
 
-    margin-top: 14px;
+    margin-top: 12px;
 
-    color: #ddd0b0;
+    color: #e6c978;
 
     font-size: 1.05rem;
 
-    line-height: 1.6;
+    letter-spacing: 1px;
 }
 
-/* =====================================================
-   SEÇÃO DOS PERSONAGENS
-===================================================== */
+
+/* =========================================================
+   SELO REAL
+========================================================= */
+
+.seal {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    width: 85px;
+
+    height: 85px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--gold-light);
+
+    color: var(--gold-light);
+
+    font-size: 2.5rem;
+
+    background:
+        var(--red-dark);
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,.7);
+}
+
+
+/* =========================================================
+   PERSONAGENS
+========================================================= */
 
 .royalty {
+
     display: grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 20px;
+    gap: 18px;
 
-    margin: 25px 0;
+    margin: 22px 0;
 }
 
+
 .character {
+
     position: relative;
 
     overflow: hidden;
 
-    min-height: 370px;
+    background: #3c0808;
 
     border:
-        3px solid
-        var(--border);
-
-    background: var(--black);
+        3px solid var(--gold-dark);
 
     box-shadow:
-        0 15px 35px #000;
+        0 12px 25px rgba(40,18,4,.65);
 
-    transition: .35s;
+    transition: .3s;
 }
 
+
 .character:hover {
-    transform: translateY(-8px);
+
+    transform:
+        translateY(-6px);
 
     border-color:
         var(--gold-light);
 
     box-shadow:
-        0 20px 45px #000,
-        0 0 25px rgba(221,170,55,.4);
+        0 15px 30px rgba(0,0,0,.65),
+        0 0 20px rgba(184,134,34,.4);
 }
 
+
 .character img {
+
     width: 100%;
-    height: 370px;
+
+    height: 280px;
 
     object-fit: cover;
 
     display: block;
 
     filter:
-        brightness(.75)
-        contrast(1.15)
-        saturate(.8);
-
-    transition: .5s;
+        sepia(.25)
+        contrast(1.08)
+        saturate(.85);
 }
 
-.character:hover img {
-    transform: scale(1.05);
-
-    filter:
-        brightness(.9)
-        contrast(1.15)
-        saturate(1);
-}
 
 .character-info {
-    position: absolute;
 
-    left: 0;
-    right: 0;
-    bottom: 0;
+    padding: 14px;
 
-    padding: 45px 20px 20px;
+    text-align: center;
+
+    color: var(--cream);
 
     background:
         linear-gradient(
-            transparent,
-            rgba(0,0,0,.98)
+            var(--red),
+            var(--red-dark)
         );
 }
 
+
 .character-info h3 {
-    font-family: Cinzel, serif;
 
     color: var(--gold-light);
 
-    font-size: 1.3rem;
+    font-family: Cinzel, serif;
+
+    font-size: 1.15rem;
 }
+
 
 .character-info p {
+
     margin-top: 5px;
 
-    color: #ccc1a6;
+    font-size: .85rem;
 
-    font-size: .9rem;
+    color: #e0c895;
 }
 
-/* =====================================================
-   NAVEGAÇÃO
-===================================================== */
+
+/* =========================================================
+   MENU
+========================================================= */
 
 .nav {
+
     display: flex;
 
     justify-content: center;
@@ -395,21 +446,11 @@ header p {
 
     gap: 12px;
 
-    margin: 25px 0;
+    margin: 22px 0;
 }
 
+
 .tab {
-    border:
-        2px solid
-        var(--border);
-
-    background:
-        linear-gradient(
-            #352719,
-            #100c07
-        );
-
-    color: var(--gold-light);
 
     padding: 14px 25px;
 
@@ -417,32 +458,53 @@ header p {
 
     font-family: Cinzel, serif;
 
-    font-weight: 800;
+    font-weight: 900;
 
-    border-radius: 5px;
+    color: var(--gold-light);
+
+    background:
+
+        linear-gradient(
+            #8c1717,
+            #460707
+        );
+
+    border:
+        2px solid var(--gold-dark);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.45);
 
     transition: .25s;
 }
 
+
 .tab:hover,
 .tab.active {
+
+    color: #381d03;
+
     background:
+
         linear-gradient(
-            #d7ae51,
-            #76561d
+            #f8dc7a,
+            #b17c1e
         );
 
-    color: #100c06;
+    border-color:
+        #ffe9a4;
 
     box-shadow:
-        0 0 20px rgba(235,194,93,.55);
+        0 0 18px rgba(220,173,59,.6);
 }
 
-/* =====================================================
-   CARDS
-===================================================== */
+
+/* =========================================================
+   GRID
+========================================================= */
 
 .grid {
+
     display: grid;
 
     grid-template-columns:
@@ -451,78 +513,105 @@ header p {
             minmax(280px, 1fr)
         );
 
-    gap: 20px;
+    gap: 18px;
 }
 
+
+/* =========================================================
+   CARD DE PERGAMINHO
+========================================================= */
+
 .card {
+
     position: relative;
 
-    padding: 25px;
+    padding: 24px;
+
+    color: var(--ink);
 
     background:
+
         linear-gradient(
-            145deg,
-            rgba(45,34,23,.96),
-            rgba(12,9,6,.98)
+            135deg,
+            #e9d39b,
+            #cba866
         );
 
     border:
-        2px solid
-        var(--border);
+        3px solid var(--gold-dark);
 
     box-shadow:
-        0 15px 30px rgba(0,0,0,.75),
-        inset 0 0 30px rgba(0,0,0,.65);
 
-    border-radius: 6px;
+        0 8px 18px
+        rgba(48,25,5,.5),
+
+        inset 0 0 25px
+        rgba(95,58,13,.18);
 }
 
-.card::before {
-    content: "⚜";
+
+/* borda interna */
+
+.card::after {
+
+    content: "";
 
     position: absolute;
 
-    right: 15px;
-    top: 10px;
+    inset: 6px;
 
-    color: var(--gold);
+    border:
+        1px solid rgba(102,65,15,.35);
 
-    opacity: .45;
-
-    font-size: 1.3rem;
+    pointer-events: none;
 }
+
 
 .card h2,
 .card h3 {
+
+    position: relative;
+
+    color: var(--red-dark);
+
     font-family: Cinzel, serif;
 
-    color: var(--gold-light);
-
-    padding-bottom: 10px;
-
-    margin-bottom: 15px;
-
     border-bottom:
-        1px solid
-        var(--border);
+        2px solid var(--gold-dark);
+
+    padding-bottom: 9px;
+
+    margin-bottom: 13px;
+
+    z-index: 1;
 }
+
 
 .card p,
 .card li {
-    color: var(--text);
 
-    line-height: 1.7;
+    position: relative;
+
+    line-height: 1.65;
+
+    color: #321b0a;
+
+    z-index: 1;
 }
+
 
 .card strong {
-    color: var(--gold-light);
+
+    color: var(--red);
 }
 
-/* =====================================================
-   ESTATÍSTICAS
-===================================================== */
+
+/* =========================================================
+   STATUS
+========================================================= */
 
 .stats {
+
     display: grid;
 
     grid-template-columns:
@@ -533,20 +622,113 @@ header p {
     margin: 15px 0;
 }
 
+
 .stat {
-    padding: 14px 5px;
 
     text-align: center;
 
-    background: #080604;
+    padding: 13px 5px;
+
+    background:
+        var(--red-dark);
 
     border:
-        1px solid
-        var(--border);
+        1px solid var(--gold-dark);
 }
 
+
 .stat-value {
+
     display: block;
+
+    color: var(--gold-light);
+
+    font-family: Cinzel, serif;
+
+    font-size: 1.4rem;
+
+    font-weight: 900;
+}
+
+
+.stat-label {
+
+    color: #e5c875;
+
+    font-size: .7rem;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   XP
+========================================================= */
+
+.xp-text {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--red-dark);
+
+    font-family: Cinzel, serif;
+
+    font-weight: bold;
+}
+
+
+.xp-bar {
+
+    height: 18px;
+
+    margin-top: 7px;
+
+    overflow: hidden;
+
+    background: #2c0808;
+
+    border:
+        2px solid var(--gold-dark);
+}
+
+
+.xp-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #650808,
+            #bd8b25,
+            #ffe596
+        );
+
+    box-shadow:
+        0 0 10px var(--gold);
+
+    transition: .3s;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 10px;
+
+    cursor: pointer;
 
     color: var(--gold-light);
 
@@ -554,228 +736,158 @@ header p {
 
     font-weight: 900;
 
-    font-size: 1.4rem;
-}
+    background:
 
-.stat-label {
-    color: var(--gold);
-
-    font-family: Cinzel, serif;
-
-    font-size: .7rem;
-
-    text-transform: uppercase;
-}
-
-/* =====================================================
-   XP
-===================================================== */
-
-.xp-container {
-    margin-top: 15px;
-}
-
-.xp-info {
-    display: flex;
-
-    justify-content: space-between;
-
-    color: var(--gold);
-
-    font-family: Cinzel, serif;
-
-    font-size: .8rem;
-}
-
-.xp-bar {
-    height: 18px;
-
-    margin-top: 7px;
-
-    background: #000;
+        linear-gradient(
+            #8e1717,
+            #430606
+        );
 
     border:
-        1px solid
-        var(--border);
-
-    overflow: hidden;
-
-    border-radius: 10px;
-}
-
-.xp-fill {
-    height: 100%;
-
-    width: 0%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #775719,
-            #d5a943,
-            #fff0a4
-        );
+        2px solid var(--gold-dark);
 
     box-shadow:
-        0 0 15px #d5a943;
-
-    transition: width .35s;
-}
-
-/* =====================================================
-   BOTÕES
-===================================================== */
-
-.btn {
-    width: 100%;
-
-    margin-top: 10px;
-
-    padding: 14px;
-
-    cursor: pointer;
-
-    border:
-        2px solid
-        var(--border);
-
-    border-radius: 4px;
-
-    color: var(--gold-light);
-
-    background:
-        linear-gradient(
-            #263d29,
-            #081008
-        );
-
-    font-family: Cinzel, serif;
-
-    font-weight: 800;
+        0 5px 10px rgba(0,0,0,.4);
 
     transition: .25s;
 }
 
+
 .btn:hover:not(:disabled) {
-    transform: translateY(-2px);
 
     background:
+
         linear-gradient(
-            #4d713d,
-            #142517
+            #b3241d,
+            #650909
         );
 
     border-color:
         var(--gold-light);
 
+    transform:
+        translateY(-2px);
+
     box-shadow:
-        0 0 18px rgba(222,180,70,.45);
+        0 0 16px rgba(191,145,39,.6);
 }
 
+
 .btn:disabled {
+
     opacity: .35;
 
     cursor: not-allowed;
 }
 
-/* =====================================================
+
+/* =========================================================
    DIÁRIO
-===================================================== */
+========================================================= */
 
 .log {
-    height: 200px;
+
+    height: 190px;
 
     overflow-y: auto;
 
-    padding: 15px;
+    padding: 14px;
 
-    background: #050403;
+    background:
+        #301008;
 
     border:
-        2px solid
-        var(--border);
+        2px solid var(--gold-dark);
 
-    box-shadow:
-        inset 0 0 20px #000;
+    color: #e8d4a0;
 }
 
+
 .log-entry {
+
     padding: 7px 0;
 
     border-bottom:
-        1px solid
-        rgba(200,155,60,.12);
-
-    color: var(--muted);
+        1px solid rgba(220,170,70,.15);
 }
+
 
 .log-entry.gold {
     color: var(--gold-light);
 }
 
+
 .log-entry.magic {
-    color: #d39bea;
+    color: #e8a6e8;
 }
+
 
 .log-entry.battle {
-    color: #e48768;
+    color: #ff9b7c;
 }
 
-/* =====================================================
+
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer {
-    margin-top: 35px;
-
-    padding: 25px;
 
     text-align: center;
 
-    color: var(--muted);
+    margin-top: 25px;
+
+    padding: 25px;
+
+    color: #4a2b0b;
 
     font-family: Cinzel, serif;
 
     border-top:
-        1px solid
-        var(--border);
+        2px solid var(--gold-dark);
 }
+
 
 footer strong {
-    color: var(--gold-light);
+
+    color: var(--red);
 }
 
-/* =====================================================
-   RESPONSIVO
-===================================================== */
+
+/* =========================================================
+   CELULAR
+========================================================= */
 
 @media(max-width: 750px) {
+
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 8px;
+    }
 
     .royalty {
         grid-template-columns: 1fr;
     }
 
-    .character {
-        min-height: 330px;
-    }
-
     .character img {
-        height: 330px;
+        height: 320px;
     }
 
     .magic-title {
         font-size: 3rem;
     }
 
-    .subtitle-line {
-        font-size: .75rem;
-
-        letter-spacing: 3px;
+    .seal {
+        display: none;
     }
 
     .tab {
         width: 100%;
     }
+
 }
 
 </style>
@@ -785,23 +897,14 @@ footer strong {
 
 <div class="container">
 
-<!-- ==================================================
-     CABEÇALHO
-================================================== -->
-
 <header>
 
-    <div class="torch left"></div>
-    <div class="torch right"></div>
-
-    <div class="crown">♛</div>
+    <div class="seal">
+        ⚜
+    </div>
 
     <div class="magic-title">
         MAGIC GRAVITY
-    </div>
-
-    <div class="subtitle-line">
-        ⚜ ━━━━━━━ ⚔ ━━━━━━━ ⚜
     </div>
 
     <h1>
@@ -809,23 +912,25 @@ footer strong {
     </h1>
 
     <p>
-        Escola Mágica Ancestral • Reino das Montanhas Nebulosas
+        Escola Mágica Ancestral &
+        Trono Imperial das Montanhas Nebulosas
     </p>
 
 </header>
 
 
-<!-- ==================================================
-     PERSONAGENS
-================================================== -->
+<!-- =====================================================
+     REALEZA
+===================================================== -->
 
 <section class="royalty">
 
     <article class="character">
 
         <img
-            src="https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?auto=format&fit=crop&w=900&q=90"
-            alt="Rei medieval">
+            src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?auto=format&fit=crop&w=900&q=90"
+            alt="Rei medieval"
+        >
 
         <div class="character-info">
 
@@ -834,7 +939,7 @@ footer strong {
             </h3>
 
             <p>
-                Guardião da Coroa e Senhor das Montanhas
+                Protetor do Reino e da Coroa
             </p>
 
         </div>
@@ -845,8 +950,9 @@ footer strong {
     <article class="character">
 
         <img
-            src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=90"
-            alt="Rainha medieval">
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Elizabeth_I_in_coronation_robes.jpg/640px-Elizabeth_I_in_coronation_robes.jpg"
+            alt="Rainha"
+        >
 
         <div class="character-info">
 
@@ -855,7 +961,7 @@ footer strong {
             </h3>
 
             <p>
-                Guardiã Arcana da Rocha Chueiri
+                Guardiã Arcana
             </p>
 
         </div>
@@ -867,7 +973,8 @@ footer strong {
 
         <img
             src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=90"
-            alt="Mago medieval">
+            alt="Mago"
+        >
 
         <div class="character-info">
 
@@ -876,7 +983,7 @@ footer strong {
             </h3>
 
             <p>
-                Mestre das Artes Mágicas e do Torneio
+                Mestre das Artes Mágicas
             </p>
 
         </div>
@@ -886,9 +993,9 @@ footer strong {
 </section>
 
 
-<!-- ==================================================
-     NAVEGAÇÃO
-================================================== -->
+<!-- =====================================================
+     MENU
+===================================================== -->
 
 <nav class="nav">
 
@@ -909,9 +1016,9 @@ footer strong {
 </nav>
 
 
-<!-- ==================================================
+<!-- =====================================================
      REINO
-================================================== -->
+===================================================== -->
 
 <section id="kingdom">
 
@@ -920,21 +1027,22 @@ footer strong {
     <article class="card">
 
         <h2>
-            🏰 O Castelo Rocha Chueiri
+            👑 O Reino da Rocha
         </h2>
 
         <p>
-            Erguido sobre uma antiga montanha,
-            o castelo é o coração do reino de
-            <strong>Magic Gravity</strong>.
+            Nas profundezas das
+            <strong>Montanhas Nebulosas</strong>,
+            ergue-se o antigo castelo da
+            Rocha Chueiri.
         </p>
 
         <br>
 
         <p>
-            Durante séculos, reis, cavaleiros e
-            magos estudaram os mistérios da
-            gravidade arcana em suas torres.
+            Ali, cavaleiros e magos servem
+            à coroa e aprendem os segredos
+            da antiga magia.
         </p>
 
     </article>
@@ -943,19 +1051,14 @@ footer strong {
     <article class="card">
 
         <h2>
-            ⚔️ O Torneio Imperial
+            ⚔️ O Grande Torneio
         </h2>
 
         <p>
-            Uma vez por ano, os maiores guerreiros
-            da Rocha Chueiri entram na arena.
-        </p>
-
-        <br>
-
-        <p>
-            O campeão recebe o lendário
-            <strong>Cetro de Ouro Puríssimo</strong>.
+            A cada ano, os melhores guerreiros
+            do reino entram na arena imperial
+            para conquistar o
+            <strong>Cetro de Ouro</strong>.
         </p>
 
     </article>
@@ -964,13 +1067,14 @@ footer strong {
     <article class="card">
 
         <h2>
-            🐉 Criaturas das Montanhas
+            🐉 Dragões Ancestrais
         </h2>
 
         <p>
-            Dragões ancestrais, grifos imperiais,
-            lobos de armadura e trolls habitam
-            as regiões proibidas.
+            Além das muralhas vivem dragões,
+            grifos e feras mágicas.
+            Somente os mais valentes conseguem
+            conquistar sua confiança.
         </p>
 
     </article>
@@ -983,9 +1087,9 @@ footer strong {
         </h2>
 
         <p>
-            Milhares de pergaminhos escondem
-            conhecimentos sobre magia, alquimia,
-            combate e criaturas lendárias.
+            Milhares de pergaminhos antigos
+            guardam conhecimentos sobre
+            magia, alquimia e criaturas.
         </p>
 
     </article>
@@ -998,10 +1102,10 @@ footer strong {
         </h2>
 
         <p>
-            <strong>HONRA</strong><br>
-            <strong>CORAGEM</strong><br>
-            <strong>CONHECIMENTO</strong><br>
-            <strong>PODER</strong>
+            <strong>Honra.</strong><br>
+            <strong>Coragem.</strong><br>
+            <strong>Conhecimento.</strong><br>
+            <strong>Poder.</strong>
         </p>
 
     </article>
@@ -1010,13 +1114,14 @@ footer strong {
     <article class="card">
 
         <h2>
-            🏹 A Floresta Negra
+            🏰 O Castelo
         </h2>
 
         <p>
-            Além das muralhas existe uma floresta
-            onde antigos espíritos guardam
-            tesouros esquecidos.
+            Torres de pedra, salões reais,
+            bandeiras vermelhas e brasões
+            dourados protegem a antiga
+            fortaleza.
         </p>
 
     </article>
@@ -1026,9 +1131,9 @@ footer strong {
 </section>
 
 
-<!-- ==================================================
+<!-- =====================================================
      JOGO
-================================================== -->
+===================================================== -->
 
 <section
     id="game"
@@ -1037,13 +1142,10 @@ footer strong {
 
 <div class="grid">
 
-
-    <!-- STATUS -->
-
     <article class="card">
 
         <h3>
-            👑 Cavaleiro Arcano
+            👑 Status do Cavaleiro
         </h3>
 
         <div class="stats">
@@ -1053,9 +1155,7 @@ footer strong {
                 <span
                     class="stat-value"
                     id="level"
-                >
-                    1
-                </span>
+                >1</span>
 
                 <span class="stat-label">
                     Nível
@@ -1063,15 +1163,12 @@ footer strong {
 
             </div>
 
-
             <div class="stat">
 
                 <span
                     class="stat-value"
                     id="gold"
-                >
-                    0
-                </span>
+                >0</span>
 
                 <span class="stat-label">
                     Ouro
@@ -1079,118 +1176,91 @@ footer strong {
 
             </div>
 
-
             <div class="stat">
 
                 <span
                     class="stat-value"
                     id="pet"
-                >
-                    —
-                </span>
+                >—</span>
 
                 <span class="stat-label">
-                    Companheiro
+                    Mascote
                 </span>
 
             </div>
 
         </div>
 
+        <div class="xp-text">
 
-        <div class="xp-container">
+            <span>
+                XP
+            </span>
 
-            <div class="xp-info">
+            <span id="xpText">
+                0 / 50
+            </span>
 
-                <span>
-                    EXPERIÊNCIA
-                </span>
+        </div>
 
-                <span id="xpText">
-                    0 / 50
-                </span>
+        <div class="xp-bar">
 
-            </div>
-
-            <div class="xp-bar">
-
-                <div
-                    class="xp-fill"
-                    id="xpBar"
-                ></div>
-
-            </div>
+            <div
+                class="xp-fill"
+                id="xpBar"
+            ></div>
 
         </div>
 
     </article>
 
 
-    <!-- TREINAMENTO -->
-
     <article class="card">
 
         <h3>
-            📚 Treinamento Arcano
+            📖 Biblioteca
         </h3>
 
         <p>
-            Enquanto estiver na academia,
-            seu conhecimento aumenta
-            continuamente.
+            Estude os pergaminhos ancestrais
+            e aumente sua experiência.
         </p>
-
-        <div
-            style="
-                text-align:center;
-                margin:20px 0;
-                color:var(--gold-light);
-                font-family:Cinzel;
-                font-size:1.5rem;
-            "
-        >
-            +<span id="rate">1</span> XP/s
-        </div>
 
         <button
             class="btn"
             onclick="train()"
         >
-            📖 Estudar Pergaminhos
+            📜 Estudar Pergaminhos
         </button>
 
     </article>
 
 
-    <!-- BATALHA -->
-
     <article class="card">
 
         <h3>
-            ⚔️ Arena Imperial
+            ⚔️ Caçada
         </h3>
 
         <p>
-            Entre na arena e enfrente uma
-            criatura escolhida pelos mestres.
+            Saia pelas montanhas e enfrente
+            criaturas lendárias.
         </p>
 
         <button
             class="btn"
             onclick="hunt()"
         >
-            ⚔️ Entrar em Batalha
+            ⚔️ Caçar Criaturas
         </button>
 
     </article>
 
 
-    <!-- MASCOTES -->
-
     <article class="card">
 
         <h3>
-            🐉 Pacto das Criaturas
+            🐉 Criaturas Aliadas
         </h3>
 
         <button
@@ -1198,7 +1268,7 @@ footer strong {
             id="griffin"
             onclick="adopt('Grifo Imperial',50,3)"
         >
-            🦅 Domar Grifo — 50 Ouro
+            🦅 Grifo — 50 Ouro
         </button>
 
         <button
@@ -1206,7 +1276,7 @@ footer strong {
             id="dragon"
             onclick="adopt('Dragão de Ouro',200,8)"
         >
-            🐉 Domar Dragão — 200 Ouro
+            🐉 Dragão — 200 Ouro
         </button>
 
     </article>
@@ -1214,13 +1284,9 @@ footer strong {
 </div>
 
 
-<!-- ==================================================
-     DIÁRIO
-================================================== -->
-
 <article
     class="card"
-    style="margin-top:20px;"
+    style="margin-top:18px;"
 >
 
     <h3>
@@ -1233,11 +1299,11 @@ footer strong {
     >
 
         <div class="log-entry gold">
-            ⚜ O Rei Valerius I recebe um novo cavaleiro na Rocha Chueiri.
+            ⚜ O Rei Valerius I recebe um novo cavaleiro.
         </div>
 
         <div class="log-entry">
-            📜 Sua jornada começa nas Montanhas Nebulosas.
+            📜 Sua jornada começa na Rocha Chueiri.
         </div>
 
     </div>
@@ -1247,13 +1313,9 @@ footer strong {
 </section>
 
 
-<!-- ==================================================
-     FOOTER
-================================================== -->
-
 <footer>
 
-    ⚜ ━━━━━━━━━━━━━━━━━━━ ⚜
+    ⚜ ━━━━━━━━━━━━━━━━━ ⚜
 
     <br><br>
 
@@ -1267,7 +1329,7 @@ footer strong {
 
     <br><br>
 
-    ⚔ Honra • Magia • Coragem • Poder ⚔
+    ⚔ HONRA • CORAGEM • MAGIA • PODER ⚔
 
 </footer>
 
@@ -1280,7 +1342,7 @@ footer strong {
    JOGADOR
 ===================================================== */
 
-const player = {
+let player = {
 
     level: 1,
 
@@ -1298,23 +1360,19 @@ const player = {
 
 
 /* =====================================================
-   TROCA DE ABA
+   ABAS
 ===================================================== */
 
 function switchTab(tab) {
 
-    const kingdom =
-        document.getElementById("kingdom");
-
-    const game =
-        document.getElementById("game");
-
-    kingdom.style.display =
+    document.getElementById("kingdom")
+        .style.display =
         tab === "kingdom"
         ? "block"
         : "none";
 
-    game.style.display =
+    document.getElementById("game")
+        .style.display =
         tab === "game"
         ? "block"
         : "none";
@@ -1335,24 +1393,24 @@ function switchTab(tab) {
 
 
 /* =====================================================
-   DIÁRIO
+   LOG
 ===================================================== */
 
-function logMessage(message, type = "") {
+function addLog(message, type = "") {
 
     const log =
         document.getElementById("log");
 
-    const item =
+    const entry =
         document.createElement("div");
 
-    item.className =
+    entry.className =
         "log-entry " + type;
 
-    item.textContent =
+    entry.textContent =
         "> " + message;
 
-    log.appendChild(item);
+    log.appendChild(entry);
 
     log.scrollTop =
         log.scrollHeight;
@@ -1361,7 +1419,7 @@ function logMessage(message, type = "") {
 
 
 /* =====================================================
-   EXPERIÊNCIA
+   XP
 ===================================================== */
 
 function gainXP(amount) {
@@ -1384,80 +1442,64 @@ function gainXP(amount) {
         player.gold +=
             player.level * 10;
 
-        logMessage(
-            "👑 Você alcançou o Nível " +
+        addLog(
+
+            "👑 Você alcançou o nível " +
             player.level +
-            "! O Rei concede " +
-            (player.level * 10) +
-            " moedas de ouro.",
+            "! A coroa concedeu ouro.",
+
             "gold"
+
         );
 
     }
 
-    update();
+    updateUI();
 
 }
 
 
 /* =====================================================
-   TREINO
+   TREINAMENTO
 ===================================================== */
 
 function train() {
 
-    const amount =
+    const xp =
         5 + player.level * 2;
 
-    gainXP(amount);
+    gainXP(xp);
 
-    logMessage(
+    addLog(
+
         "📖 Você estudou um antigo pergaminho e ganhou +" +
-        amount +
+        xp +
         " XP.",
+
         "magic"
+
     );
 
 }
 
 
 /* =====================================================
-   BATALHA
+   CAÇA
 ===================================================== */
 
 function hunt() {
 
     const enemies = [
 
-        {
-            name: "Gárgula da Muralha",
-            xp: 15,
-            gold: 12
-        },
+        ["Gárgula da Torre", 15, 12],
 
-        {
-            name: "Lobo de Ferro",
-            xp: 25,
-            gold: 20
-        },
+        ["Lobo de Ferro", 25, 20],
 
-        {
-            name: "Troll das Montanhas",
-            xp: 35,
-            gold: 30
-        },
+        ["Troll da Montanha", 35, 30],
 
-        {
-            name: "Cavaleiro Fantasma",
-            xp: 55,
-            gold: 50
-        },
+        ["Cavaleiro Fantasma", 55, 50],
 
-        {
-            name: "Dragão Sombrio",
-            xp: 90,
-            gold: 100
-        }
+        ["Dragão Vermelho", 90, 100]
 
     ];
 
@@ -1469,42 +1511,42 @@ function hunt() {
             )
         ];
 
-    const bonus =
+    const xp =
+        enemy[1] +
         player.level * 2;
 
-    const totalXP =
-        enemy.xp + bonus;
-
     player.gold +=
-        enemy.gold;
+        enemy[2];
 
-    logMessage(
+    addLog(
+
         "⚔️ Vitória! Você derrotou " +
-        enemy.name +
+        enemy[0] +
         " e recebeu +" +
-        totalXP +
+        xp +
         " XP e +" +
-        enemy.gold +
+        enemy[2] +
         " Ouro.",
+
         "battle"
+
     );
 
-    gainXP(totalXP);
+    gainXP(xp);
 
 }
 
 
 /* =====================================================
-   DOMAR CRIATURA
+   MASCOTE
 ===================================================== */
 
 function adopt(name, cost, rate) {
 
     if (player.pet === name) {
 
-        logMessage(
-            "🐾 Você já possui um pacto com " +
-            name + "."
+        addLog(
+            "🐾 Você já possui " + name + "."
         );
 
         return;
@@ -1512,8 +1554,8 @@ function adopt(name, cost, rate) {
 
     if (player.gold < cost) {
 
-        logMessage(
-            "💰 Você precisa de " +
+        addLog(
+            "💰 Faltam " +
             (cost - player.gold) +
             " moedas de ouro."
         );
@@ -1523,22 +1565,21 @@ function adopt(name, cost, rate) {
 
     player.gold -= cost;
 
-    player.pet =
-        name;
+    player.pet = name;
 
-    player.rate =
-        rate;
+    player.rate = rate;
 
-    logMessage(
-        "✨ Pacto realizado! " +
+    addLog(
+
+        "✨ Pacto mágico! " +
         name +
-        " agora acompanha sua jornada e concede +" +
-        rate +
-        " XP por segundo.",
+        " agora acompanha seu cavaleiro.",
+
         "magic"
+
     );
 
-    update();
+    updateUI();
 
 }
 
@@ -1547,7 +1588,7 @@ function adopt(name, cost, rate) {
    INTERFACE
 ===================================================== */
 
-function update() {
+function updateUI() {
 
     document.getElementById("level")
         .textContent =
@@ -1560,10 +1601,6 @@ function update() {
     document.getElementById("pet")
         .textContent =
         player.pet;
-
-    document.getElementById("rate")
-        .textContent =
-        player.rate;
 
     document.getElementById("xpText")
         .textContent =
@@ -1598,18 +1635,26 @@ function update() {
    XP PASSIVO
 ===================================================== */
 
-setInterval(() => {
+setInterval(
 
-    gainXP(player.rate);
+    function() {
 
-}, 1000);
+        gainXP(
+            player.rate
+        );
+
+    },
+
+    1000
+
+);
 
 
 /* =====================================================
-   INICIALIZAÇÃO
+   INICIAR
 ===================================================== */
 
-update();
+updateUI();
 
 </script>
 
